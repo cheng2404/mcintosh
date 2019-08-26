@@ -10,6 +10,7 @@ const config = Platform.select({
   default: {},
 });
 
+// Home Navigation
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -21,12 +22,12 @@ HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
+    focused={focused}
+    name={
+      Platform.OS === 'ios'
+        ? `ios-home${focused ? '' : ''}`
+        : 'md-information-circle'
+    }
     />
   ),
   tabBarVisible: true,
@@ -34,8 +35,87 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
+// Suggestion Navigation
+const SuggestionStack = createStackNavigator(
+  {
+    Suggestion: HomeScreen,
+  },
+  config,
+)
+
+SuggestionStack.navigationOptions = {
+  tabBarLabel: 'Suggestion',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-document${focused ? '' : ''}`
+          : 'md-document'
+      }
+    />
+  ),
+  tabBarVisible: true,
+}
+
+SuggestionStack.path = '';
+
+
+// Explore Navigation
+const ExploreStack = createStackNavigator(
+  {
+    Explore: HomeScreen,
+  },
+  config,
+)
+
+ExploreStack.navigationOptions = {
+  tabBarLabel: 'Explore',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-compass${focused ? '' : ''}`
+          : 'md-compass'
+      }
+    />
+  ),
+  tabBarVisible: true,
+}
+
+ExploreStack.path = '';
+
+// Account Navigation
+const AccountStack = createStackNavigator(
+  {
+    Explore: HomeScreen,
+  },
+  config,
+)
+
+AccountStack.navigationOptions = {
+  tabBarLabel: 'Account',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-person${focused ? '' : ''}`
+          : 'md-person'
+      }
+    />
+  ),
+  tabBarVisible: true,
+}
+
+AccountStack.path = '';
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
+  SuggestionStack,
+  ExploreStack,
+  AccountStack
 });
 
 tabNavigator.path = '';
