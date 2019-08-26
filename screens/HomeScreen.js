@@ -31,17 +31,23 @@ export default class HomeScreen extends Component {
               <Text style={styles.tempLink}>View more</Text>
           </View>
           <View style = {styles.lineStyle} />
-          <View style={styles.history_section}>
-            <Text>section1</Text>
-          </View>
-          <View style={styles.history_section}>
-            <Text>section2</Text>
-          </View>
-          <View style={styles.history_section}>
-            <Text>section3</Text>
-          </View>
-          <View style={styles.history_section}>
-            <Text>section4</Text>
+          <View style={styles.history_area}>
+            <View style={styles.history_section}> 
+              <Text style={styles.plusNum}>+$5000</Text>
+              <Text style={styles.plusText}>Salary</Text>
+            </View>
+            <View style={styles.history_section}>
+              <Text style={styles.minusNum}>-$2000</Text>
+              <Text style={styles.minusText}>Shopping</Text>
+            </View>
+            <View style={styles.history_section}>
+              <Text style={styles.plusNum}>+$60</Text>
+              <Text style={styles.plusText}>Sell</Text>
+            </View>
+            <View style={styles.history_section}>
+              <Text style={styles.plusNum}>+$5000</Text>
+              <Text style={styles.plusText}>Salary</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -96,19 +102,28 @@ const styles = StyleSheet.create({
     width: vw(100) - 50,
   },
 
+  history_area: {
+    flex: 6,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: vw(100)- 40,
+    marginTop: 5,
+  },
+
   history_section: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    width: vw(100)- 32,
-    marginLeft: 16,
-    marginRight: 16,
-    marginTop: 20,
-    borderWidth: 5,
+    width: vw(100)- 50,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderWidth: 2,
     borderColor: '#2f225b',
     borderRadius: 20,
     backgroundColor: '#fff',
+    marginBottom: 2,
   },
 
   headerText: {
@@ -123,6 +138,32 @@ const styles = StyleSheet.create({
     marginLeft: 100,
     lineHeight: 35,
     color: "#fff",
+  },
+
+  plusNum: {
+    color: "#00f",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+
+  plusText: {
+    color: "#00f",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: vw(100)- 250,
+  },
+
+  minusNum: {
+    color: "#f00",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+
+  minusText: {
+    color: "#f00",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: vw(100)- 250,
   },
 
   lineStyle:{
