@@ -5,6 +5,8 @@ import {
   StyleSheet
 } from 'react-native';
 
+import Header from '../components/Dashboard/Header'
+
 export default class HomeScreen extends Component {
 
   // To hide the NavigationBar from Home Screen
@@ -16,6 +18,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Header />
         <Text>Home Screen</Text>
       </View>
     )
