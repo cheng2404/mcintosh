@@ -11,7 +11,7 @@ export default class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
-        <Text style={styles.text}>Header</Text>
+        <Text style={styles.text}>seed</Text>
       </View>
     )
   }
@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: '#ffffff'
+    color: '#ffffff',
+    fontFamily: 'Futura',
+    fontSize: 28,
   }
 })

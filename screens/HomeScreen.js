@@ -8,7 +8,6 @@ import {
 
 import Header from '../components/Dashboard/Header'
 import { vw } from 'react-native-expo-viewport-units';
-import { BorderlessButton } from 'react-native-gesture-handler';
 
 export default class HomeScreen extends Component {
 
@@ -21,10 +20,37 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+
+        {/* Heaer Component */}
         <Header/>
+
+        {/* Goal */}
         <View style={styles.goal_container}>
-          <Text>Component 1</Text>
+
+          {/* Goal Container Header */}
+          <Text style={styles.goal_container_header_sub}>You've already saved: </Text>
+          <View style={styles.goal_container_header}>
+            <Text style={styles.goal_container_header_doller}>$</Text>
+            <Text style={styles.goal_container_header_main}>10,060</Text>
+          </View>
+
+          {/* Goal Container Main */}
+          <View style={styles.goal_container_main}>
+
+            {/* Progress Bar */}
+            <View style={styles.progressbar_view}>
+              <Text style={styles.progressbar_text}></Text>
+            </View>
+
+            {/* Current State */}
+            <View style={styles.current_state_view}>
+              <Text style={styles.current_state_text}>$ 10,060</Text>
+              <Text style={styles.current_state_text}>$ 300,000</Text>
+            </View>
+          </View>
         </View>
+
+        {/* Saving History */}
         <View style={styles.history_container}>
           <View style={styles.history_header}>
               <Text style={styles.headerText}>Saving History</Text>
@@ -66,20 +92,85 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
+  // Goal Container
   goal_container: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
     width: vw(100)- 32,
+    height: 180,
     marginLeft: 16,
     marginRight: 16,
     marginTop: 20,
     borderWidth: 5,
     borderColor: '#2f225b',
-    borderRadius: 20
+    borderRadius: 20,
+    padding: 10,
   },
 
+  // Goal Container Header
+  goal_container_header_sub: {
+    color: '#9c9c9c',
+    fontSize: 16
+  },
+
+  goal_container_header: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    height: 80,
+  },
+
+  goal_container_header_doller: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#2f225b',
+    marginBottom: 10
+  },
+
+  goal_container_header_main: {
+    fontSize: 60,
+    fontFamily: 'Futura',
+  },
+
+  // Goal Container Main
+  goal_container_main: {
+    flex: 1,
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20
+  },
+
+  // Progress Bar
+  progressbar_view: {
+    width: '100%',
+    height: 20,
+    backgroundColor: '#e9e9e9',
+    borderRadius: 20,
+    overflow: 'hidden'
+  },
+
+  progressbar_text: {
+    width: '30%',
+    height: 20,
+    backgroundColor: '#43964e'
+  },
+
+  // Current State
+  current_state_view: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 5
+  },
+
+  current_state_text: {
+    fontSize: 16
+  },
+
+  // History Container
   history_container: {
     flex: 1,
     flexDirection: 'column',
@@ -141,26 +232,26 @@ const styles = StyleSheet.create({
   },
 
   plusNum: {
-    color: "#00f",
+    color: "#43964e",
     fontSize: 18,
     fontWeight: "bold",
   },
 
   plusText: {
-    color: "#00f",
+    color: "#43964e",
     fontSize: 18,
     fontWeight: "bold",
     marginLeft: vw(100)- 250,
   },
 
   minusNum: {
-    color: "#f00",
+    color: "#b54044",
     fontSize: 18,
     fontWeight: "bold",
   },
 
   minusText: {
-    color: "#f00",
+    color: "#b54044",
     fontSize: 18,
     fontWeight: "bold",
     marginLeft: vw(100)- 250,
