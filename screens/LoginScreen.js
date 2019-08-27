@@ -23,7 +23,7 @@ export default class LoginScreen extends Component {
       <View>
           <Image
           style = {styles.i}
-          source = {require('/Users/apple/Desktop/deco3801-mcintosh/assets/images/logo.png')}
+          source = {require('../assets/images/logo.png')}
           />
           <View style={styles.container}>
             <Text style = {styles.text}>Username</Text>
@@ -45,7 +45,7 @@ export default class LoginScreen extends Component {
         <View style={styles.google}>
           <Image
           style = {styles.photo}
-          source = {require('/Users/apple/Desktop/deco3801-mcintosh/assets/images/google.png')}
+          source = {require('../assets/images/google.png')}
           />
           <Text style = {styles.google_text}>Google</Text>
         </View>
@@ -53,7 +53,7 @@ export default class LoginScreen extends Component {
         <View style={styles.facebook}>
           <Image
           style = {styles.photo}
-          source = {require('/Users/apple/Desktop/deco3801-mcintosh/assets/images/facebook.png')}
+          source = {require('../assets/images/facebook.png')}
           />
           <Text style = {styles.facebook_text}>Facebook</Text>
           <Text style = {styles.q_text}>Doesn't have an account?</Text>          
