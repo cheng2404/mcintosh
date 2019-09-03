@@ -20,12 +20,12 @@ export default class LoginScreen extends Component {
   // TODO: Add contents on the LOGIN Screen.
   render() {
     return (
-      <View>
+      <View style={styles.container}>
           <Image
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
           />
-          <View style={styles.container}>
+          <View style={styles.loginContainer}>
             <Text style = {styles.text}>Username</Text>
             <View style={styles.pass}>
               <Text style = {styles.text}>***********</Text>
@@ -57,7 +57,12 @@ export default class LoginScreen extends Component {
           />
           <Text style = {styles.facebook_text}>Facebook</Text>
           <Text style = {styles.q_text}>Doesn't have an account?</Text>          
-          <Text style = {styles.c_text}>Creat now!</Text>
+          {/*<Text style = {styles.c_text}>Create now!</Text> */}
+          <Button
+            color = '#43964e'
+            onPress ={() => this.props.navigation.push('Register')} 
+            title = 'Create now'
+          />
           </View>
         </View>
 
@@ -72,21 +77,25 @@ export default class LoginScreen extends Component {
 // TODO: Add styles on the LOGIN Screen
 const styles = StyleSheet.create({
  
-
-  i: {
-    width: 150,
-    height: 150,
-    marginLeft: 100,
-    marginTop: 20,
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
 
-  container: {
+  i: {
+    width: 200,
+    height: 150,
+    marginTop: 50,
+  },
+
+  loginContainer: {
 
     flexDirection: 'column',
     width: 200,
     height: 40,
-    marginLeft: 80,
-    marginTop: 30,
     borderWidth: 0.5,
     borderColor: 'grey',
     borderRadius: 5,
@@ -103,8 +112,9 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 5,
   },
+
   forgot: {
-    marginTop: 15,
+    marginTop: 25,
     fontSize: 12,
     marginLeft: 100,
     color: 'lightblue',
@@ -120,20 +130,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     width: 200,
     height: 40,
-    marginLeft: 80,
-    marginTop: 100,
     borderWidth: 0,
     borderColor: 'white',
     borderRadius: 5,
-    
+    marginTop: 10,
   },
 
   google: {
     flexDirection: 'column',
     width: 200,
     height: 40,
-    marginLeft: 80,
-    marginTop: 10,
     borderWidth: 0.5,
     borderColor: 'grey',
     borderRadius: 5,
@@ -149,11 +155,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     width: 200,
     height: 40,
-    marginLeft: 80,
-    marginTop: 10,
     borderWidth: 0.5,
     borderColor: 'grey',
     borderRadius: 5,
+    marginBottom: 150,
   },
 
   facebook_text: {

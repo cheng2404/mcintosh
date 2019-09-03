@@ -3,7 +3,6 @@ import {
   Text,
   View,
   StyleSheet,
-  Hr,
 } from 'react-native';
 
 import Header from '../components/Dashboard/Header'
