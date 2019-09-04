@@ -12,6 +12,11 @@ import { vw } from 'react-native-expo-viewport-units';
 
 export default class RegisterScreen extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {email: '', pass: ''};
+  }
+
   // Move to HOME Screen
   moveToHome() {
     this.props.navigation.push('Home')
@@ -21,13 +26,6 @@ export default class RegisterScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/*<View style={styles.container}>
-          <Text>Register Screen</Text>
-          <Button
-          onPress={() => this.moveToHome()}
-          title='Move to Home Screen'
-          />
-        </View>*/}
         <Image
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
@@ -38,11 +36,32 @@ export default class RegisterScreen extends Component {
         </View>
         <View style={styles.register_form}>
           <Text style={styles.create_header}>Create Your Account</Text>
-
-          <View style = {styles.lineStyle} />
+          <TextInput
+            style={styles.register_input}
+            placeholder="Email address: "
+            onChangeText={(email) => this.setState({email})}
+            value={this.state.email}
+          />
+          <View style = {styles.blackLine} />
+          <TextInput
+            style={styles.register_input}
+            placeholder="Password: "
+            onChangeText={(pass) => this.setState({pass})}
+            value={this.state.pass}
+          />
+          <View style = {styles.grayLine} />
+        </View>
+        <View style={styles.submit_area}>
+          <Text style={styles.privacy_message}>By signing up</Text>
+          <Text style={styles.privacy_message}>You accept the Terms of Service and Privacy Policy.</Text>
+          <Button
+          style={styles.signup_button}
+          onPress={() => this.moveToHome()}
+          title='Sign up'
+          />
         </View>
       </View>   
-      )
+      );
   }
 }
 
@@ -51,7 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#fff',
   },
@@ -86,10 +105,10 @@ const styles = StyleSheet.create({
   },
 
   register_form : {
-    flex: 1,
+    flex: 2,
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     backgroundColor: '#fff',
   },
 
@@ -100,8 +119,32 @@ const styles = StyleSheet.create({
     marginRight: vw(30),
   },
 
-  lineStyle:{
+  register_input : {
+    height: 40,
+    width: vw(100)-30,
+  },
+
+  submit_area : {
+    flex: 3,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+
+  privacy_message : {
+    marginBottom: 5,
+  },
+
+  blackLine:{
     backgroundColor: '#000',
+    height: 2,
+    width: vw(100)- 50,
+    margin: 2,
+  },
+
+  grayLine:{
+    backgroundColor: '#e0e0eb',
     height: 2,
     width: vw(100)- 50,
     margin: 2,
