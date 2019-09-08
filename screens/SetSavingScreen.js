@@ -14,12 +14,12 @@ export default class RegisterScreen extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {email: '', pass: ''};
+    this.state = {sa: '', sp: ''};
   }
 
   // Move to HOME Screen
-  moveToSetSaving() {
-    this.props.navigation.push('SetSaving')
+  moveToHome() {
+    this.props.navigation.push('Home')
   }
 
   // TODO: Add contents on the REGISTER Screen.
@@ -31,33 +31,33 @@ export default class RegisterScreen extends Component {
           source = {require('../assets/images/logo.png')}
          />
         <View style={styles.register_message}>
-          <Text style={styles.register_header}>Let's begin your journey</Text>
+        <Text style={styles.register_header}>Let's begin your journey</Text>
           <Text style={styles.register_header}>To save money</Text>
         </View>
-        <View style={styles.register_form}>
-          <Text style={styles.create_header}>Create Your Account</Text>
+        <View style={styles.saving_form}>
+          <Text style={styles.create_header}>Set your saving goal</Text>
           <TextInput
             style={styles.register_input}
-            placeholder="Email address: "
-            onChangeText={(email) => this.setState({email})}
-            value={this.state.email}
+            placeholder="Saving Amount:"
+            onChangeText={(sa) => this.setState({sa})}
+            value={this.state.sa}
           />
           <View style = {styles.blackLine} />
           <TextInput
             style={styles.register_input}
-            placeholder="Password: "
-            onChangeText={(pass) => this.setState({pass})}
-            value={this.state.pass}
+            placeholder="Saving Period"
+            onChangeText={(sp) => this.setState({sp})}
+            value={this.state.sp}
           />
           <View style = {styles.grayLine} />
         </View>
         <View style={styles.submit_area}>
-          <Text style={styles.privacy_message}>By signing up</Text>
-          <Text style={styles.privacy_message}>You accept the Terms of Service and Privacy Policy.</Text>
+          <Text style={styles.saving_message}>Savings required in one month:</Text>
+          <Text style={styles.saving_message}>$</Text>
           <Button
           style={styles.signup_button}
-          onPress={() => this.moveToSetSaving()}
-          title='Next'
+          onPress={() => this.moveToHome()}
+          title='Sign up'
           />
         </View>
       </View>   
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  register_form : {
+  saving_form : {
     flex: 2,
     flexDirection: 'column',
     justifyContent: 'flex-start',
