@@ -101,10 +101,18 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginRight: 16,
     marginTop: 20,
-    borderWidth: 5,
-    borderColor: '#2f225b',
     borderRadius: 20,
     padding: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+    backgroundColor: '#ffffff'
   },
 
   // Goal Container Header
