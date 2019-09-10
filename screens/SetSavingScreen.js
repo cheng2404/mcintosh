@@ -45,7 +45,7 @@ export default class RegisterScreen extends Component {
           <View style = {styles.blackLine} />
           <TextInput
             style={styles.register_input}
-            placeholder="Saving Period"
+            placeholder="Saving Period:"
             onChangeText={(sp) => this.setState({sp})}
             value={this.state.sp}
           />
