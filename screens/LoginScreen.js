@@ -4,8 +4,10 @@ import {
   View,
   StyleSheet,
   Button,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
+import { vw } from 'react-native-expo-viewport-units';
 
 export default class LoginScreen extends Component {
 
@@ -26,12 +28,20 @@ export default class LoginScreen extends Component {
           source = {require('../assets/images/logo.png')}
           />
           <View style={styles.loginContainer}>
-            <Text style = {styles.text}>Username</Text>
-            <View style={styles.pass}>
-              <Text style = {styles.text}>***********</Text>
-              <Text style = {styles.forgot}>Forgot Password?</Text>
-            </View>
+            <TextInput
+            style={styles.register_input}
+            placeholder="UserName: "
+            />
+
           </View>
+          <View style={styles.loginContainer}>
+            <TextInput
+            style={styles.register_input}
+            placeholder="Password: "
+            />
+            <Text style = {styles.forgot}>Forgot Password?</Text>
+          </View>
+          
 
         <View style={styles.login}>
           <Button
@@ -185,5 +195,9 @@ const styles = StyleSheet.create({
     height: 20,
     marginLeft: 40,
     marginTop:10,
+  },
+  register_input : {
+    height: 40,
+    width: vw(100)-30,
   },
 })

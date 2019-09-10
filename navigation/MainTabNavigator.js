@@ -4,6 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -89,7 +90,7 @@ ExploreStack.path = '';
 // Account Navigation
 const AccountStack = createStackNavigator(
   {
-    Explore: HomeScreen,
+    Explore: ProfileScreen,
   },
   config,
 )
