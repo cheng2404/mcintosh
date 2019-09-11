@@ -3,12 +3,13 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput
 } from 'react-native';
 import { vw } from 'react-native-expo-viewport-units';
-import Header from '../components/Dashboard/Header'
+import { vh } from 'react-native-expo-viewport-units';
+import Header from '../components/Dashboard/Header';
+import { Button } from 'react-native-material-ui';
 
 export default class ProfileScreen extends Component {
 
@@ -22,20 +23,45 @@ export default class ProfileScreen extends Component {
 				<View style = {styles.Topic}>
 					<Text style = {styles.profile}>Profile</Text>
 					<Text style = {styles.name}>Jianhao ZHAO</Text>
+					<Image
+          			style = {styles.i}
+          			source = {require('../assets/images/profile_photo.png')}
+          			/>
 					<Text style = {styles.plan}>Complete plan: 50%</Text>
 				</View>
+				<View style={styles.progressbar_view}>
+              		<Text style={styles.progressbar_text}></Text>
+            	</View>
+            	<View style={styles.grey}>
+            	</View>
 				<View style = {styles.section}>
 					<Text style = {styles.attribute}
 				 	onPress ={() => this.props.navigation.push('Plan')} >My Plan</Text>
-					<Text style = {styles.attribute}>My Favourites</Text>
+				 	<Image
+          			style = {styles.i1}
+          			source = {require('../assets/images/button.png')}
+          			onPress ={() => this.props.navigation.push('Plan')} 
+          			/>
+					
 				</View>
+
+				<View style={styles.line}>
+            	</View>
+
+            	<Text style = {styles.favourite}>My Favourites</Text>
+            	<Image
+          			style = {styles.i1}
+          			source = {require('../assets/images/button.png')}
+          			onPress ={() => this.props.navigation.push('Plan')} 
+          			/>
+            	<View style={styles.grey0}>
+            	</View>
 
 				<View style = {styles.container}>
 					<View style = {styles.logout}>
 						<Button
-            			color = 'purple'
-            			onPress ={() => this.props.navigation.push('Home')} 
-            			title = 'Log Out'
+            			primary raised upperCase={false} text="Log out"
+            			onPress ={() => this.props.navigation.push('Login')} 
         				/>
         			</View>
 				</View>
@@ -67,35 +93,30 @@ const styles = StyleSheet.create({
     
 	},
 	profile: {
-		marginTop: 25,
+		marginTop: vh(3),
     	fontSize: 30,
     	marginLeft: 10,
     	color: 'black',
     	fontWeight: 'bold',
 	},
 	name: {
-		marginTop: 10,
+		marginTop: vh(3),
     	fontSize: 25,
     	marginLeft: 10,
     	color: 'black',
     	fontWeight: 'bold',
 	},
 	plan: {
-		marginTop: 10,
+		marginTop: vh(1),
     	fontSize: 15,
     	marginLeft: 10,
     	color: 'grey',
 	},
 	attribute: {
-		marginTop: 25,
-    	fontSize: 20,
+		marginTop: vh(1),
+    	fontSize: 25,
     	marginLeft: 10,
     	color: 'black'
-	},
-	grey: {
-		flex: 1,
-		flexDirection: 'column',
-		backgroundColor: 'grey'
 	},
 	section: {
 
@@ -106,8 +127,64 @@ const styles = StyleSheet.create({
     	height: 20,
     	borderWidth: 0,
     	borderColor: 'white',
-    	marginTop: 250,
-    	marginLeft: 28
+    	marginTop: vh(30),
+    	marginLeft: 28,
 	},
+	 progressbar_view: {
+	 	marginLeft:10,
+    	width: '60%',
+   		height: 10,
+    	backgroundColor: '#e9e9e9',
+    	borderRadius: 20,
+    	overflow: 'hidden'
+  	},
+    progressbar_text: {
+    	width: '50%',
+    	height: 10,
+    	backgroundColor: '#43964e'
+  	},
+  	grey: {
+  		marginTop: vh(3),
+    	width: '100%',
+   		height: 25,
+    	backgroundColor: '#e9e9e9',
+    	borderRadius: 0,
+    	overflow: 'hidden'
+  	},
+  	grey0: {
+  		marginTop: vh(1),
+    	width: '100%',
+   		height: 25,
+    	backgroundColor: '#e9e9e9',
+    	borderRadius: 0,
+    	overflow: 'hidden'
+  	},
+  	line: {
+  		marginTop: vh(1),
+  		width: '100%',
+   		height: 3,
+    	backgroundColor: '#e9e9e9',
+    	borderRadius: 0,
+    	overflow: 'hidden'
+  	},
+  	favourite: {
+  		marginTop: vh(1),
+  		fontSize: 25,
+    	marginLeft: 10,
+    	color: 'black'
+  	},
+  	i: {
+    	width: 100,
+    	height: 100,
+    	marginLeft: vw(70),
+    	marginTop: vh(-10)
+  	},
+  	i1: {
+  		width: 35,
+    	height: 35,
+  		marginLeft: vw(85),
+    	marginTop: vh(-6)
+  	}
+
 
 })

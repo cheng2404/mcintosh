@@ -20,7 +20,8 @@ export default class PlanScreen extends Component {
 		return (
 			<View style = {styles.nothing}>
 				<View style = {styles.Topic}>
-					<Text style = {styles.back}>Back</Text>
+					<Text style = {styles.back}
+						onPress ={() => this.props.navigation.push('Profile')}>Back</Text>
 					<Text style = {styles.plan}>Plan</Text>
 				</View>
 

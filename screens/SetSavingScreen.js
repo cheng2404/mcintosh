@@ -3,14 +3,15 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput,
 } from 'react-native';
 
 import { vw } from 'react-native-expo-viewport-units';
 
-export default class RegisterScreen extends Component {
+import { Button } from 'react-native-material-ui'
+
+export default class SetSavingScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -54,11 +55,14 @@ export default class RegisterScreen extends Component {
         <View style={styles.submit_area}>
           <Text style={styles.saving_message}>Savings required in one month:</Text>
           <Text style={styles.saving_message}>$</Text>
-          <Button
+          {/*<Button
           style={styles.signup_button}
           onPress={() => this.moveToHome()}
           title='Sign up'
-          />
+          /> */}
+          {/* Material UI Test */}
+          <Button primary raised upperCase={false} text="Sign up"
+          onPress={() => this.moveToHome()}/> 
         </View>
       </View>   
       );
