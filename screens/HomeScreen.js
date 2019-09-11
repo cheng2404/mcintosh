@@ -8,6 +8,8 @@ import {
 import Header from '../components/Dashboard/Header'
 import { vw } from 'react-native-expo-viewport-units';
 
+import { Button } from 'react-native-material-ui'
+
 export default class HomeScreen extends Component {
 
   // To hide the NavigationBar from Home Screen
@@ -47,6 +49,10 @@ export default class HomeScreen extends Component {
               <Text style={styles.current_state_text}>$ 300,000</Text>
             </View>
           </View>
+
+
+          {/* Material UI Test */}
+          <Button raised  upperCase={false} text="Test Button"/> 
         </View>
 
         {/* Saving History */}
