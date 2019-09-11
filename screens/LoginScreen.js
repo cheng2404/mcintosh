@@ -3,11 +3,12 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput
 } from 'react-native';
 import { vw } from 'react-native-expo-viewport-units';
+
+import { Button } from 'react-native-material-ui';
 
 export default class LoginScreen extends Component {
 
@@ -44,11 +45,9 @@ export default class LoginScreen extends Component {
           
 
         <View style={styles.login}>
-          <Button
+          <Button primary raised upperCase={false} text="Log in"
             color = 'green'
             onPress ={() => this.props.navigation.push('Home')} 
-            title = 'Login'
-
         />
         </View>
         
@@ -69,9 +68,8 @@ export default class LoginScreen extends Component {
           <Text style = {styles.q_text}>Doesn't have an account?</Text>          
           {/*<Text style = {styles.c_text}>Create now!</Text> */}
           <Button
-            color = '#43964e'
+            primary raised upperCase={false} text="Create now"
             onPress ={() => this.props.navigation.push('Register')} 
-            title = 'Create now'
           />
           </View>
         </View>
@@ -169,6 +167,7 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 5,
     marginBottom: 150,
+    marginTop: -15,
   },
 
   facebook_text: {

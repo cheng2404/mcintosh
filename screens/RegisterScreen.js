@@ -3,12 +3,13 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput,
 } from 'react-native';
 
 import { vw } from 'react-native-expo-viewport-units';
+
+import { Button } from 'react-native-material-ui'
 
 export default class RegisterScreen extends Component {
 
@@ -30,10 +31,12 @@ export default class RegisterScreen extends Component {
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
          />
+        {/* Message area */}
         <View style={styles.register_message}>
           <Text style={styles.register_header}>Let's begin your journey</Text>
           <Text style={styles.register_header}>To save money</Text>
         </View>
+        {/* Register Form area */}
         <View style={styles.register_form}>
           <Text style={styles.create_header}>Create Your Account</Text>
           <TextInput
@@ -54,11 +57,8 @@ export default class RegisterScreen extends Component {
         <View style={styles.submit_area}>
           <Text style={styles.privacy_message}>By signing up</Text>
           <Text style={styles.privacy_message}>You accept the Terms of Service and Privacy Policy.</Text>
-          <Button
-          style={styles.signup_button}
-          onPress={() => this.moveToSetSaving()}
-          title='Next'
-          />
+          <Button primary raised upperCase={false} text="Next"
+          onPress={() => this.moveToSetSaving()}/> 
         </View>
       </View>   
       );

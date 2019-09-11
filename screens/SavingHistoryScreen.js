@@ -6,19 +6,16 @@ import {
 } from 'react-native';
 
 import Header from '../components/Dashboard/Header'
-import LineChart from '../components/Common/LineChart'
 import { vw } from 'react-native-expo-viewport-units';
 
-export default class HomeScreen extends Component {
+import { Button } from 'react-native-material-ui'
+
+export default class SavingHistoryScreen extends Component {
 
   // To hide the NavigationBar from Home Screen
   static navigationOptions = {
     header: null
   };
-
-  moveToSavingHistory() {
-    this.props.navigation.push('SavingHistory');
-  }
 
   // TODO: Add contents on the HOME Screen.
   render() {
@@ -52,14 +49,13 @@ export default class HomeScreen extends Component {
               <Text style={styles.current_state_text}>$ 300,000</Text>
             </View>
           </View>
-        </View>
+        </View> 
 
         {/* Saving History */}
-        <View style={styles.history_container}>
+        {/*<View style={styles.history_container}>
           <View style={styles.history_header}>
               <Text style={styles.headerText}>Saving History</Text>
-              <Button primary raised upperCase={false} text="View more"
-              onPress={() => this.moveToSavingHistory()}/>
+              <Text style={styles.tempLink}>View more</Text>
           </View>
           <View style = {styles.lineStyle} />
           <View style={styles.history_area}>
@@ -80,8 +76,8 @@ export default class HomeScreen extends Component {
               <Text style={styles.plusText}>Salary</Text>
             </View>
           </View>
-        </View>
-      </View>
+        </View>*/}
+    </View> 
     )
   }
 }
