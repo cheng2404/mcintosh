@@ -10,8 +10,6 @@ import LineChart from '../components/Common/LineChart';
 import { vw } from 'react-native-expo-viewport-units';
 import { Button } from 'react-native-material-ui';
 
-import { Button } from 'react-native-material-ui'
-
 export default class HomeScreen extends Component {
 
   // To hide the NavigationBar from Home Screen
