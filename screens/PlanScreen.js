@@ -3,12 +3,12 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput
 } from 'react-native';
 import { vw, vh } from 'react-native-expo-viewport-units';
 import Header from '../components/Dashboard/Header'
+import { Button } from 'react-native-material-ui';
 
 export default class PlanScreen extends Component {
 
@@ -28,7 +28,7 @@ export default class PlanScreen extends Component {
 
 				</View>
 
-				{/* <View style = {styles.column}> */}
+				<View style = {styles.column}>
 					<Text style = {styles.attribute}>Total Saving Goal</Text>
 				
 					<Text style = {styles.attribute}>Completion Period</Text>
@@ -37,12 +37,10 @@ export default class PlanScreen extends Component {
 				
 					<Text style = {styles.attribute}>Region</Text>
 				
-				{/* </View> */}
+				</View>
 				<View style = {styles.edit}>
-					<Button
-            		color = 'purple'
-            		onPress ={() => this.props.navigation.push('Home')} 
-            		title = 'Edit'
+					<Button primary raised upperCase={false} text="Edit"
+					onPress ={() => this.props.navigation.push('Home')} 
         			/>
         		</View>
         	</View>
@@ -78,15 +76,16 @@ const styles = StyleSheet.create({
 		flex: 1,
     	flexDirection: 'column',
     	// justifyContent: 'space-between',
-    	alignItems: 'flex-start',
+    	// alignItems: 'flex-start',
 		backgroundColor: '#fff',
-
+		marginTop: vh(-15),
 		
 	},
 	attribute: {
 		fontSize: 15,
 		marginLeft: vw(10),
 		marginBottom: vh(5),
+	
 		// paddingTop: 15,
     	color: 'black',
 	},
