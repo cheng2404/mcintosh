@@ -2,9 +2,13 @@ import React, {Component} from 'react';
 import {
   Text,
   View,
-  StyleSheet
+  Image,
+  StyleSheet,
+  TouchableOpacity 
 } from 'react-native';
 import { vw } from 'react-native-expo-viewport-units';
+
+
 
 
 export default class Header extends Component {
@@ -12,6 +16,12 @@ export default class Header extends Component {
     return (
       <View style={styles.header}>
         <Text style={styles.text}>seed</Text>
+        <TouchableOpacity>
+        <Image
+          style = {styles.add_b}
+          source = {require('../../assets/images/add_button.png')}
+        />
+        </TouchableOpacity>
       </View>
     )
   }
@@ -31,6 +41,15 @@ const styles = StyleSheet.create({
   text: {
     color: '#ffffff',
     fontFamily: 'Futura',
-    fontSize: 28,
-  }
+    fontSize: 30,
+  },
+
+  add_b: {
+    width: 30,
+    height: 30,
+    marginLeft : 345,
+    marginRight: 5,
+    marginTop: -34,
+    resizeMode: 'contain',
+  },
 })
