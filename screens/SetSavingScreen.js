@@ -3,14 +3,15 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput,
 } from 'react-native';
 
 import { vw } from 'react-native-expo-viewport-units';
 
-export default class RegisterScreen extends Component {
+import { Button } from 'react-native-material-ui'
+
+export default class SetSavingScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -22,7 +23,6 @@ export default class RegisterScreen extends Component {
     this.props.navigation.push('Home')
   }
 
-  // TODO: Add contents on the REGISTER Screen.
   render() {
     return (
       <View style={styles.container}>
@@ -30,10 +30,12 @@ export default class RegisterScreen extends Component {
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
          />
+        {/* Message area */}
         <View style={styles.register_message}>
         <Text style={styles.register_header}>Let's begin your journey</Text>
           <Text style={styles.register_header}>To save money</Text>
         </View>
+        {/* Set Form area */}
         <View style={styles.saving_form}>
           <Text style={styles.create_header}>Set your saving goal</Text>
           <TextInput
@@ -54,11 +56,14 @@ export default class RegisterScreen extends Component {
         <View style={styles.submit_area}>
           <Text style={styles.saving_message}>Savings required in one month:</Text>
           <Text style={styles.saving_message}>$</Text>
-          <Button
+          {/*<Button
           style={styles.signup_button}
           onPress={() => this.moveToHome()}
           title='Sign up'
-          />
+          /> */}
+          {/* Material UI Test */}
+          <Button primary raised upperCase={false} text="Sign up"
+          onPress={() => this.moveToHome()}/> 
         </View>
       </View>   
       );
