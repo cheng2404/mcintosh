@@ -8,19 +8,19 @@ import {
 } from 'react-native';
 import { vw } from 'react-native-expo-viewport-units';
 
-
-
-
 export default class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
         <Text style={styles.text}>seed</Text>
-        <TouchableOpacity>
+    
+        <TouchableOpacity onPress={() => this.props.navigation.push('Plan')} >
+        
         <Image
-          style = {styles.add_b}
+          style = {styles.add_b} 
           source = {require('../../assets/images/add_button.png')}
         />
+        
         </TouchableOpacity>
       </View>
     )
@@ -53,3 +53,4 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 })
+
