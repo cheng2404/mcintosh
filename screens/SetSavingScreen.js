@@ -3,14 +3,14 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   Image,
   TextInput,
 } from 'react-native';
+import Button from '@material-ui/core/Button';
 
 import { vw } from 'react-native-expo-viewport-units';
 
-export default class RegisterScreen extends Component {
+export default class SetSavingScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -58,7 +58,7 @@ export default class RegisterScreen extends Component {
           style={styles.signup_button}
           onPress={() => this.moveToHome()}
           title='Sign up'
-          />
+          /> 
         </View>
       </View>   
       );
