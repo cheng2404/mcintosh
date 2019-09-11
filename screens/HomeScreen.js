@@ -49,10 +49,6 @@ export default class HomeScreen extends Component {
               <Text style={styles.current_state_text}>$ 300,000</Text>
             </View>
           </View>
-
-
-          {/* Material UI Test */}
-          <Button raised  upperCase={false} text="Test Button"/> 
         </View>
 
         {/* Saving History */}

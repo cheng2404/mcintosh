@@ -6,9 +6,10 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import Button from '@material-ui/core/Button';
 
 import { vw } from 'react-native-expo-viewport-units';
+
+import { Button } from 'react-native-material-ui'
 
 export default class SetSavingScreen extends Component {
 
@@ -54,11 +55,14 @@ export default class SetSavingScreen extends Component {
         <View style={styles.submit_area}>
           <Text style={styles.saving_message}>Savings required in one month:</Text>
           <Text style={styles.saving_message}>$</Text>
-          <Button
+          {/*<Button
           style={styles.signup_button}
           onPress={() => this.moveToHome()}
           title='Sign up'
-          /> 
+          /> */}
+          {/* Material UI Test */}
+          <Button primary raised upperCase={false} text="Sign up"
+          onPress={() => this.moveToHome()}/> 
         </View>
       </View>   
       );
