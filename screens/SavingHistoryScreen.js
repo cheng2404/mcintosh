@@ -49,10 +49,10 @@ export default class SavingHistoryScreen extends Component {
               <Text style={styles.current_state_text}>$ 300,000</Text>
             </View>
           </View>
-        </View>
+        </View> 
 
         {/* Saving History */}
-        <View style={styles.history_container}>
+        {/*<View style={styles.history_container}>
           <View style={styles.history_header}>
               <Text style={styles.headerText}>Saving History</Text>
               <Text style={styles.tempLink}>View more</Text>
@@ -76,8 +76,8 @@ export default class SavingHistoryScreen extends Component {
               <Text style={styles.plusText}>Salary</Text>
             </View>
           </View>
-        </View>
-      </View>
+        </View>*/}
+    </View> 
     )
   }
 }
