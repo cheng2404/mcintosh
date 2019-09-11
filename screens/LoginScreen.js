@@ -169,6 +169,7 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 5,
     marginBottom: 150,
+    marginTop: -15,
   },
 
   facebook_text: {
