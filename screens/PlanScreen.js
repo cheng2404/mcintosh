@@ -7,7 +7,7 @@ import {
   Image,
   TextInput
 } from 'react-native';
-import { vw } from 'react-native-expo-viewport-units';
+import { vw, vh } from 'react-native-expo-viewport-units';
 import Header from '../components/Dashboard/Header'
 
 export default class PlanScreen extends Component {
@@ -21,10 +21,10 @@ export default class PlanScreen extends Component {
 			<View style = {styles.nothing}>
 				<View style = {styles.Topic}>
 					<Text style = {styles.back}>Back</Text>
-					<Text style = {styles.plan}>Plan</Text>
+					<Text style = {styles.plan}> My Plan</Text>
 				</View>
 
-				<View style = {styles.column}>
+				{/* <View style = {styles.column}> */}
 					<Text style = {styles.attribute}>Total Saving Goal</Text>
 				
 					<Text style = {styles.attribute}>Completion Period</Text>
@@ -33,7 +33,7 @@ export default class PlanScreen extends Component {
 				
 					<Text style = {styles.attribute}>Region</Text>
 				
-				</View>
+				{/* </View> */}
 				<View style = {styles.edit}>
 					<Button
             		color = 'purple'
@@ -51,29 +51,39 @@ const styles = StyleSheet.create({
 	Topic: {
 		flex: 1,
     	flexDirection: 'column',
-    	justifyContent: 'space-between',
+    	// justifyContent: 'space-between',
     	alignItems: 'flex-start',
     	backgroundColor: '#fff',
 	},
 	back: {
-		marginTop: 5,
+		// marginTop: 20,
     	fontSize: 30,
-    	marginLeft: vw(100)- 250,
+		marginLeft: vw(5),
+		marginTop: vh(6),
     	color: 'green',
 	},
 	plan: {
-		marginTop: 25,
+		// marginTop: 10,
     	fontSize: 30,
-    	marginLeft: vw(100)- 250,
+		marginLeft: vw(6),
+		marginTop: vh(2),
     	color: 'black',
     	fontWeight: 'bold',
 	},
 	column: {
-		marginTop: 5,
+		flex: 1,
+    	flexDirection: 'column',
+    	// justifyContent: 'space-between',
+    	alignItems: 'flex-start',
+		backgroundColor: '#fff',
+
+		
 	},
 	attribute: {
 		fontSize: 15,
-    	marginLeft: vw(100)- 250,
+		marginLeft: vw(10),
+		marginBottom: vh(5),
+		// paddingTop: 15,
     	color: 'black',
 	},
 	grey: {
