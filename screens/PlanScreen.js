@@ -20,14 +20,12 @@ export default class PlanScreen extends Component {
 		return (
 			<View style = {styles.nothing}>
 				<View style = {styles.Topic}>
-<<<<<<< HEAD
-					<Text style = {styles.back}>Back</Text>
-					<Text style = {styles.plan}> My Plan</Text>
-=======
+
+
 					<Text style = {styles.back}
 						onPress ={() => this.props.navigation.push('Profile')}>Back</Text>
 					<Text style = {styles.plan}>Plan</Text>
->>>>>>> ee6b777870e948f08dd37347318f2fd1ad9bf3a1
+
 				</View>
 
 				{/* <View style = {styles.column}> */}
