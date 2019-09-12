@@ -18,7 +18,7 @@ class Header extends Component {
       <View style={styles.header}>
         <Text style={styles.text}>seed</Text>
     
-        <TouchableOpacity onPress={() => this.props.navigation.push('Plan')} >
+        <TouchableOpacity onPress={() => this.props.navigation.push('AddRecord')} >
         
         <Image
           style = {styles.add_b} 
