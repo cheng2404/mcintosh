@@ -32,7 +32,7 @@ export default class AddRecordScreen extends Component {
         <Text style={styles.TitleWords}>Record of your Saving or Spending </Text>
 
         <View style={styles.Box}>
-          <TouchableOpacity style = {styles.SavingB}>
+          <TouchableOpacity style = {styles.SavingB} onPress={() => this.props.navigation.push('SavingRecord')}>
             <Text style={styles. SSTitle}>Saving</Text>
             <Image
               style = {styles.ImageSaving}
@@ -41,7 +41,7 @@ export default class AddRecordScreen extends Component {
           
           </TouchableOpacity>
 
-          <TouchableOpacity style = {styles.SpendingB}>
+          <TouchableOpacity style = {styles.SpendingB} >
             <Text style={styles. SSTitle}>Spending</Text>
             <Image
               style = {styles.ImageSpending}

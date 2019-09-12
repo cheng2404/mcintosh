@@ -6,6 +6,8 @@ import SavingHistoryScreen from '../screens/SavingHistoryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import PlanScreen from '../screens/PlanScreen';
 import AddRecordScreen from '../screens/AddRecordScreen';
+import SavingRecordScreen from '../screens/SavingRecordScreen';
+
 
 const AuthNavigatour = createStackNavigator(
   {
@@ -15,7 +17,8 @@ const AuthNavigatour = createStackNavigator(
     SavingHistory: { screen: SavingHistoryScreen },
     Profile: {screen: ProfileScreen},
     Plan: {screen: PlanScreen},
-    AddRecord: {screen: AddRecordScreen}
+    AddRecord: {screen: AddRecordScreen},
+    SavingRecord: {screen: SavingRecordScreen}
   },
   {
     headerMode: 'none'
