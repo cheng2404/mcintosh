@@ -41,7 +41,7 @@ export default class AddRecordScreen extends Component {
           
           </TouchableOpacity>
 
-          <TouchableOpacity style = {styles.SpendingB} >
+          <TouchableOpacity style = {styles.SpendingB} onPress={() => this.props.navigation.push('SpendingRecord')}>
             <Text style={styles. SSTitle}>Spending</Text>
             <Image
               style = {styles.ImageSpending}
