@@ -4,10 +4,10 @@ import {
   View,
   StyleSheet,
   Image,
-  TextInput
+  TextInput,
 } from 'react-native';
 import { vw, vh } from 'react-native-expo-viewport-units';
-import Header from '../components/Dashboard/Header'
+import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
 
 export default class PlanScreen extends Component {
@@ -30,7 +30,7 @@ export default class PlanScreen extends Component {
 
 				<View style = {styles.column}>
 					<Text style = {styles.attribute}>Total Saving Goal</Text>
-				
+					
 					<Text style = {styles.attribute}>Completion Period</Text>
 				
 					<Text style = {styles.attribute}>House Type</Text>
@@ -39,7 +39,7 @@ export default class PlanScreen extends Component {
 				
 				</View>
 				<View style = {styles.edit}>
-					<Button primary raised upperCase={false} text="Edit"
+					<Button primary raised upperCase={false} color="#8A2586" text="Edit"
 					onPress ={() => this.props.navigation.push('Home')} 
         			/>
         		</View>
@@ -97,7 +97,15 @@ const styles = StyleSheet.create({
 	},
 	edit: {
 		flex: 1,
-		alignItems: 'flex-end'
+		flexDirection: 'column',
+		width: 200,
+		height: 40,
+		borderWidth: 0,
+		borderColor: 'white',
+		borderRadius: 5,
+		marginTop: vh(-10),
+		marginLeft: vw(25),
+		color: '#8A2586',
 	},
 	nothing: {
 		flex: 1,
@@ -105,7 +113,16 @@ const styles = StyleSheet.create({
     	justifyContent: 'space-between',
     	alignItems: 'flex-start',
     	backgroundColor: '#fff',
-	}
+	},
+	
+	// line: {
+	// 	marginTop: vh(1),
+	// 	width: '100%',
+	// 	 height: 3,
+	//   backgroundColor: '#e9e9e9',
+	//   borderRadius: 0,
+	//   overflow: 'hidden'
+	// },
 
 
 
