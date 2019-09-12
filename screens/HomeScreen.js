@@ -7,6 +7,7 @@ import {
 
 import Header from '../components/Dashboard/Header'
 import LineChart from '../components/Common/LineChart'
+import { Button } from 'react-native-material-ui';
 import { vw } from 'react-native-expo-viewport-units';
 
 export default class HomeScreen extends Component {
@@ -56,7 +57,7 @@ export default class HomeScreen extends Component {
 
         {/* Saving History */}
         <View style={styles.history_container}>
-          <View style={styles.history_header}>
+          {/* <View style={styles.history_header}>
               <Text style={styles.headerText}>Saving History</Text>
               <Button primary raised upperCase={false} text="View more"
               onPress={() => this.moveToLogin()}/>
@@ -79,7 +80,11 @@ export default class HomeScreen extends Component {
               <Text style={styles.plusNum}>+$5000</Text>
               <Text style={styles.plusText}>Salary</Text>
             </View>
-          </View>
+          </View> */}
+
+          <LineChart />
+
+          
         </View>
       </View>
     )

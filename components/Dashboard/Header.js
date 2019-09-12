@@ -7,16 +7,17 @@ import {
   TouchableOpacity 
 } from 'react-native';
 import { vw } from 'react-native-expo-viewport-units';
+import { withNavigation } from 'react-navigation';
 
 
 
+class Header extends Component {
 
-export default class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
         <Text style={styles.text}>seed</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress ={() => this.props.navigation.push('Home')}>
         <Image
           style = {styles.add_b}
           source = {require('../../assets/images/add_button.png')}
@@ -53,3 +54,5 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 })
+
+export default withNavigation(Header);
