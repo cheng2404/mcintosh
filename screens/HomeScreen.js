@@ -9,6 +9,7 @@ import Header from '../components/Dashboard/Header'
 import LineChart from '../components/Common/LineChart'
 import { Button } from 'react-native-material-ui';
 import { vw } from 'react-native-expo-viewport-units';
+import { Button } from 'react-native-material-ui';
 
 export default class HomeScreen extends Component {
 
@@ -17,8 +18,8 @@ export default class HomeScreen extends Component {
     header: null
   };
 
-  moveToLogin() {
-    this.props.navigation.push('Login')
+  moveToSavingHistory() {
+    this.props.navigation.push('SavingHistory');
   }
 
   // TODO: Add contents on the HOME Screen.
@@ -60,7 +61,7 @@ export default class HomeScreen extends Component {
           {/* <View style={styles.history_header}>
               <Text style={styles.headerText}>Saving History</Text>
               <Button primary raised upperCase={false} text="View more"
-              onPress={() => this.moveToLogin()}/>
+              onPress={() => this.moveToSavingHistory()}/>
           </View>
           <View style = {styles.lineStyle} />
           <View style={styles.history_area}>

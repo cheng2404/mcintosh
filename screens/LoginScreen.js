@@ -45,7 +45,7 @@ export default class LoginScreen extends Component {
           
 
         <View style={styles.login}>
-          <Button primary raised upperCase={false} text="Sign up"
+          <Button primary raised upperCase={false} text="Log in"
             color = 'green'
             onPress ={() => this.props.navigation.push('Home')} 
         />

@@ -17,11 +17,14 @@ class Header extends Component {
     return (
       <View style={styles.header}>
         <Text style={styles.text}>seed</Text>
-        <TouchableOpacity onPress ={() => this.props.navigation.push('Home')}>
+    
+        <TouchableOpacity onPress={() => this.props.navigation.push('Plan')} >
+        
         <Image
-          style = {styles.add_b}
+          style = {styles.add_b} 
           source = {require('../../assets/images/add_button.png')}
         />
+        
         </TouchableOpacity>
       </View>
     )

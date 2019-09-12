@@ -49,35 +49,13 @@ export default class SavingHistoryScreen extends Component {
               <Text style={styles.current_state_text}>$ 300,000</Text>
             </View>
           </View>
-        </View>
+        </View> 
 
-        {/* Saving History */}
-        <View style={styles.history_container}>
-          <View style={styles.history_header}>
-              <Text style={styles.headerText}>Saving History</Text>
-              <Text style={styles.tempLink}>View more</Text>
-          </View>
-          <View style = {styles.lineStyle} />
-          <View style={styles.history_area}>
-            <View style={styles.history_section}> 
-              <Text style={styles.plusNum}>+$5000</Text>
-              <Text style={styles.plusText}>Salary</Text>
-            </View>
-            <View style={styles.history_section}>
-              <Text style={styles.minusNum}>-$2000</Text>
-              <Text style={styles.minusText}>Shopping</Text>
-            </View>
-            <View style={styles.history_section}>
-              <Text style={styles.plusNum}>+$60</Text>
-              <Text style={styles.plusText}>Sell</Text>
-            </View>
-            <View style={styles.history_section}>
-              <Text style={styles.plusNum}>+$5000</Text>
-              <Text style={styles.plusText}>Salary</Text>
-            </View>
-          </View>
+        {/* Aggregate Saving History */}
+        <View style={styles.aggregateHistory_contaggainer}>
+          
         </View>
-      </View>
+    </View> 
     )
   }
 }

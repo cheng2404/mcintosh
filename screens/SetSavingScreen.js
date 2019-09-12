@@ -23,7 +23,6 @@ export default class SetSavingScreen extends Component {
     this.props.navigation.push('Home')
   }
 
-  // TODO: Add contents on the REGISTER Screen.
   render() {
     return (
       <View style={styles.container}>
@@ -31,10 +30,12 @@ export default class SetSavingScreen extends Component {
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
          />
+        {/* Message area */}
         <View style={styles.register_message}>
         <Text style={styles.register_header}>Let's begin your journey</Text>
           <Text style={styles.register_header}>To save money</Text>
         </View>
+        {/* Set Form area */}
         <View style={styles.saving_form}>
           <Text style={styles.create_header}>Set your saving goal</Text>
           <TextInput
