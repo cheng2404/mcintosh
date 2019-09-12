@@ -9,7 +9,6 @@ import Header from '../components/Dashboard/Header'
 import LineChart from '../components/Common/LineChart'
 import { Button } from 'react-native-material-ui';
 import { vw } from 'react-native-expo-viewport-units';
-import { Button } from 'react-native-material-ui';
 
 export default class HomeScreen extends Component {
 
