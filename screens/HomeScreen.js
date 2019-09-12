@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import Header from '../components/Dashboard/Header'
-import LineChart from '../components/Common/LineChart'
+import LineChartComponent from '../components/Common/LineChartComponent'
 import { Button } from 'react-native-material-ui';
 import { vw } from 'react-native-expo-viewport-units';
 
@@ -57,34 +57,10 @@ export default class HomeScreen extends Component {
 
         {/* Saving History */}
         <View style={styles.history_container}>
-          {/* <View style={styles.history_header}>
-              <Text style={styles.headerText}>Saving History</Text>
-              <Button primary raised upperCase={false} text="View more"
-              onPress={() => this.moveToSavingHistory()}/>
+          <View style={styles.history_header}>
+            <Text style={styles.history_header_title}>Saving History</Text>
           </View>
-          <View style = {styles.lineStyle} />
-          <View style={styles.history_area}>
-            <View style={styles.history_section}> 
-              <Text style={styles.plusNum}>+$5000</Text>
-              <Text style={styles.plusText}>Salary</Text>
-            </View>
-            <View style={styles.history_section}>
-              <Text style={styles.minusNum}>-$2000</Text>
-              <Text style={styles.minusText}>Shopping</Text>
-            </View>
-            <View style={styles.history_section}>
-              <Text style={styles.plusNum}>+$60</Text>
-              <Text style={styles.plusText}>Sell</Text>
-            </View>
-            <View style={styles.history_section}>
-              <Text style={styles.plusNum}>+$5000</Text>
-              <Text style={styles.plusText}>Salary</Text>
-            </View>
-          </View> */}
-
-          <LineChart />
-
-          
+          <LineChartComponent />
         </View>
       </View>
     )
@@ -97,7 +73,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#fff',
   },
@@ -190,25 +165,36 @@ const styles = StyleSheet.create({
 
   // History Container
   history_container: {
-    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#2f225b',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+    backgroundColor: '#ffffff',
     margin: 16,
     width: vw(100) - 32,
     borderRadius: 20,
   },
 
   history_header: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    marginLeft: 16,
-    marginRight: 16,
-    marginTop: 10,
-    width: vw(100) - 50,
+    display: 'flex',
+    justifyContent: 'center',
+    width: vw(100) - 32,
+    height: 50,
+    borderRadius: 10,
+    padding: 10
+  },
+
+  history_header_title: {
+    color: '#9c9c9c',
+    fontSize: 16
   },
 
   history_area: {
