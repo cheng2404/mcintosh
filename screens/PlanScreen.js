@@ -9,6 +9,7 @@ import {
 import { vw, vh } from 'react-native-expo-viewport-units';
 import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
+import { Divider } from 'react-native-elements';
 
 export default class PlanScreen extends Component {
 
@@ -30,11 +31,11 @@ export default class PlanScreen extends Component {
 
 				<View style = {styles.column}>
 					<Text style = {styles.attribute}>Total Saving Goal</Text>
-					
+					<Divider/>
 					<Text style = {styles.attribute}>Completion Period</Text>
-				
+					<Divider/>
 					<Text style = {styles.attribute}>House Type</Text>
-				
+					<Divider/>
 					<Text style = {styles.attribute}>Region</Text>
 				
 				</View>
