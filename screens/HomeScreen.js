@@ -3,6 +3,7 @@ import {
   Text,
   View,
   StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
 import Header from '../components/Dashboard/Header'
@@ -87,7 +88,9 @@ export default class HomeScreen extends Component {
         <View style={styles.history_container}>
           <View style={styles.history_header}>
             <Text style={styles.history_header_title}>Saving History</Text>
-            <Text>More</Text>
+            <TouchableOpacity onPress={() => this.props.navigation.push('SavingHistory')} >
+              <Text style={styles.history_header_link}>More</Text>
+            </TouchableOpacity>
           </View>
           <LineChartComponent />
         </View>
@@ -280,7 +283,8 @@ const styles = StyleSheet.create({
 
   history_header: {
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     width: vw(100) - 32,
     height: 50,
     borderRadius: 10,
@@ -290,6 +294,12 @@ const styles = StyleSheet.create({
   history_header_title: {
     color: '#9c9c9c',
     fontSize: 16
+  },
+
+  history_header_link: {
+    color: '#9c9c9c',
+    fontSize: 16,
+    textDecorationLine: 'underline'
   },
 
   history_area: {
