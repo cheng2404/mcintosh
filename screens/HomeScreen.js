@@ -33,7 +33,7 @@ export default class HomeScreen extends Component {
         <View style={styles.goal_container}>
 
           {/* Goal Container Header */}
-          <Text style={styles.goal_container_header_sub}>You've already saved: </Text>
+          <Text style={styles.goal_container_header_sub}>You've already saved</Text>
           <View style={styles.goal_container_header}>
             <Text style={styles.goal_container_header_doller}>$</Text>
             <Text style={styles.goal_container_header_main}>10,060</Text>
@@ -55,10 +55,39 @@ export default class HomeScreen extends Component {
           </View>
         </View>
 
+        {/* Monthly Goal */}
+
+        <View style={styles.monthly_goal}>
+
+          {/* Monthly Goal Header */}
+          <Text style={styles.monthly_goal_header_sub}>Monthly Goal (1/9 ~ 30/9)</Text>
+
+          <View style={styles.monthly_goal_container}>
+            <Text style={styles.monthly_goal_doller}>$</Text>
+            <Text style={styles.monthly_goal_number}>1,800</Text>
+          </View>
+
+           {/* Goal Container Main */}
+           <View style={styles.goal_container_main}>
+
+            {/* Progress Bar */}
+            <View style={styles.monthly_progressbar_view}>
+              <Text style={styles.monthly_progressbar_text}></Text>
+            </View>
+
+            {/* Current State */}
+            <View style={styles.monthly_current_state_view}>
+              <Text style={styles.monthly_current_state_text}>$ 1,800</Text>
+              <Text style={styles.monthly_current_state_text}>$ 2,500</Text>
+            </View>
+          </View>
+        </View>
+
         {/* Saving History */}
         <View style={styles.history_container}>
           <View style={styles.history_header}>
             <Text style={styles.history_header_title}>Saving History</Text>
+            <Text>More</Text>
           </View>
           <LineChartComponent />
         </View>
@@ -88,16 +117,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderRadius: 20,
     padding: 10,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
-    backgroundColor: '#ffffff'
   },
 
   // Goal Container Header
@@ -138,7 +157,7 @@ const styles = StyleSheet.create({
   // Progress Bar
   progressbar_view: {
     width: '100%',
-    height: 20,
+    height: 30,
     backgroundColor: '#e9e9e9',
     borderRadius: 20,
     overflow: 'hidden'
@@ -146,7 +165,7 @@ const styles = StyleSheet.create({
 
   progressbar_text: {
     width: '30%',
-    height: 20,
+    height: 30,
     backgroundColor: '#43964e'
   },
 
@@ -163,17 +182,93 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
 
+  // Monthly Goal
+  monthly_goal: {
+    flexDirection: 'column',
+    width: vw(100)- 32,
+    height: 160,
+    marginLeft: 16,
+    marginRight: 16,
+    marginTop: 20,
+    borderRadius: 20,
+    padding: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+    backgroundColor: '#ffffff'
+  },
+
+  monthly_goal_header_sub: {
+    color: '#9c9c9c',
+    fontSize: 16
+  },
+
+  monthly_goal_container: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    height: 50,
+    marginTop: 16
+  },
+
+  monthly_goal_doller: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#2f225b',
+    marginBottom: 6
+  },
+
+  monthly_goal_number: {
+    fontSize: 40,
+    fontFamily: 'Futura',
+  },
+
+  // Progress Bar
+  monthly_progressbar_view: {
+    width: '100%',
+    height: 14,
+    backgroundColor: '#e9e9e9',
+    borderRadius: 20,
+    overflow: 'hidden'
+  },
+  
+  monthly_progressbar_text: {
+    width: '72%',
+    height: 14,
+    backgroundColor: '#43964e'
+  },
+  
+  // Current State
+  monthly_current_state_view: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 5
+  },
+  
+  monthly_current_state_text: {
+    fontSize: 14
+  },
+
   // History Container
   history_container: {
     flexDirection: 'column',
     justifyContent: 'space-between',
+    height: 270,
     alignItems: 'center',
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.15,
     shadowRadius: 3.84,
 
     elevation: 5,
