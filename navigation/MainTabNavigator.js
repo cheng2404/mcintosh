@@ -5,6 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import SavingHistoryScreen from '../screens/SavingHistoryScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -15,6 +16,7 @@ const config = Platform.select({
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
+    SavingHistory: SavingHistoryScreen
   },
   config,
 );
