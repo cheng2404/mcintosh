@@ -10,14 +10,7 @@ export default class LineChartComponent extends Component {
           data={{
             labels: ['January', 'February', 'March', 'April', 'May', 'June'],
             datasets: [{
-              data: [
-                Math.random() * 100 - 50,
-                Math.random() * 100 - 50,
-                Math.random() * 100 - 50,
-                Math.random() * 100 - 50,
-                Math.random() * 100 - 50,
-                Math.random() * 100 - 50
-              ]
+              data: this.props.data
             }]
           }}
           width={Dimensions.get('window').width - 32} // from react-native
@@ -35,7 +28,6 @@ export default class LineChartComponent extends Component {
           }}
           bezier
           style={{
-            // marginTop: 30,
             borderRadius: 20
           }}
         />

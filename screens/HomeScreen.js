@@ -10,6 +10,7 @@ import Header from '../components/Dashboard/Header'
 import LineChartComponent from '../components/Common/LineChartComponent'
 import { Button } from 'react-native-material-ui';
 import { vw } from 'react-native-expo-viewport-units';
+import { AsyncStorage } from 'react-native';
 
 export default class HomeScreen extends Component {
 
@@ -18,12 +19,28 @@ export default class HomeScreen extends Component {
     header: null
   };
 
-  moveToSavingHistory() {
-    this.props.navigation.push('SavingHistory');
+  state = {
+    monthlyData: []
+  }
+
+  async componentDidMount() {
+    const sampleData = [
+      Math.random() * 100 - 50,
+      Math.random() * 100 - 50,
+      Math.random() * 100 - 50,
+      Math.random() * 100 - 50,
+      Math.random() * 100 - 50,
+      Math.random() * 100 - 50
+    ]
+
+    await AsyncStorage.setItem('monthlyData', JSON.stringify(sampleData))
+    this.setState(() => ({
+      monthlyData: sampleData
+    }))
   }
 
   // TODO: Add contents on the HOME Screen.
-  render() {
+  render() {    
     return (
       <View style={styles.container}>
 
@@ -92,7 +109,7 @@ export default class HomeScreen extends Component {
               <Text style={styles.history_header_link}>More</Text>
             </TouchableOpacity>
           </View>
-          <LineChartComponent />
+          <LineChartComponent data={this.state.monthlyData} />
         </View>
       </View>
     )
