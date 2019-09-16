@@ -23,7 +23,7 @@ const AuthNavigatour = createStackNavigator(
     SavingRecord: {screen: SavingRecordScreen},
     SpendingRecord: {screen: SpendingRecordScreen},
     ProfileCollection:{screen: ProfileCollectionScreen},
-    PlanEdit :{PlanEditScreen}
+    PlanEdit:{screen: PlanEditScreen},
   },
   {
     headerMode: 'none'

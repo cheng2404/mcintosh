@@ -11,7 +11,7 @@ import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
 // import Divider from 'react-native-divider';
 
-export default class PlanEditScreen extends Component {
+export default class PlanEdit extends Component {
 
 	static navigationOptions = {
     	header: null
