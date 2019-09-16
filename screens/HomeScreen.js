@@ -7,8 +7,7 @@ import {
 } from 'react-native';
 
 import Header from '../components/Dashboard/Header'
-import LineChartComponent from '../components/Common/LineChartComponent'
-import { Button } from 'react-native-material-ui';
+import LineChartComponent from '../components/Common/LineGraphComponent'
 import { vw } from 'react-native-expo-viewport-units';
 import { AsyncStorage } from 'react-native';
 
@@ -20,22 +19,54 @@ export default class HomeScreen extends Component {
   };
 
   state = {
-    monthlyData: []
+    monthlyData: [],
+    monthlyLabel: []
   }
 
   async componentDidMount() {
-    const sampleData = [
-      Math.random() * 100 - 50,
-      Math.random() * 100 - 50,
-      Math.random() * 100 - 50,
-      Math.random() * 100 - 50,
-      Math.random() * 100 - 50,
-      Math.random() * 100 - 50
+    const sampleWeekData = [
+      Math.random() * 100,
+      Math.random() * 100,
+      Math.random() * 100,
+      Math.random() * 100,
+      Math.random() * 100,
+      Math.random() * 100
     ]
 
-    await AsyncStorage.setItem('monthlyData', JSON.stringify(sampleData))
+    const sampleMonthData = [
+      Math.random() * 1000,
+      Math.random() * 1000,
+      Math.random() * 1000,
+      Math.random() * 1000,
+      Math.random() * 1000,
+      Math.random() * 1000
+    ]
+
+    const sampleYearData = [
+      Math.random() * 10000,
+      Math.random() * 10000,
+      Math.random() * 10000,
+      Math.random() * 10000,
+      Math.random() * 10000,
+      Math.random() * 10000
+    ]
+
+    await AsyncStorage.setItem('weeklyData', JSON.stringify(sampleWeekData))
+    await AsyncStorage.setItem('monthlyData', JSON.stringify(sampleMonthData))
+    await AsyncStorage.setItem('yearlyData', JSON.stringify(sampleYearData))
+
+    // Generate Sample Graph Label Data Set
+    const sampleWeekLabel = ['18/8', '25/8', '1/9', '8/9', '15/9', '22/9']
+    const sampleMonthLabel = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+    const sampleYearLabel = ['2014', '2015', '2016', '2017', '2018', '2019']
+
+    await AsyncStorage.setItem('weeklyLabel', JSON.stringify(sampleWeekLabel))
+    await AsyncStorage.setItem('monthlyLabel', JSON.stringify(sampleMonthLabel))
+    await AsyncStorage.setItem('yearlyLabel', JSON.stringify(sampleYearLabel))
+
     this.setState(() => ({
-      monthlyData: sampleData
+      monthlyData: sampleMonthData,
+      monthlyLabel: sampleMonthLabel
     }))
   }
 
@@ -109,7 +140,7 @@ export default class HomeScreen extends Component {
               <Text style={styles.history_header_link}>More</Text>
             </TouchableOpacity>
           </View>
-          <LineChartComponent data={this.state.monthlyData} />
+          <LineChartComponent data={this.state.monthlyData} label={this.state.monthlyLabel} />
         </View>
       </View>
     )

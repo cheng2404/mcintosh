@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import { View, Text, Dimensions } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
-export default class LineChartComponent extends Component {
+export default class LineGraphComponent extends Component {
   render() {
     return (
       <View>
         <LineChart
           data={{
-            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            labels: this.props.label,
             datasets: [{
               data: this.props.data
             }]
