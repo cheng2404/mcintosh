@@ -41,7 +41,7 @@ export default class PlanScreen extends Component {
 				</View>
 				<View style = {styles.edit}>
 					<Button primary raised upperCase={false} color="#8A2586" text="Edit"
-					onPress ={() => this.props.navigation.push('PlanEditScreen.js')} 
+					onPress ={() => this.props.navigation.push('PlanEdit')} 
         			/>
         		</View>
         	</View>

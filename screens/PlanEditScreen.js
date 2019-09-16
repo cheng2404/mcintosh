@@ -24,7 +24,7 @@ export default class PlanEditScreen extends Component {
 
 
 					<Text style = {styles.back}
-						onPress ={() => this.props.navigation.push('Profile')}>Back</Text>
+						onPress ={() => this.props.navigation.push('Plan')}>Back</Text>
 					<Text style = {styles.plan}>Plan</Text>
 
 				</View>
@@ -41,7 +41,7 @@ export default class PlanEditScreen extends Component {
 				</View>
 				<View style = {styles.save}>
 					<Button primary raised upperCase={false} color="#36AC4A" text="Save"
-					onPress ={() => this.props.navigation.push('PlanScreen.js')} 
+					onPress ={() => this.props.navigation.push('Plan')} 
         			/>
         		</View>
         	</View>
