@@ -39,9 +39,9 @@ export default class PlanScreen extends Component {
 					<Text style = {styles.attribute}>Region</Text>
 				
 				</View>
-				<View style = {styles.edit}>
-					<Button primary raised upperCase={false} color="#8A2586" text="Edit"
-					onPress ={() => this.props.navigation.push('PlanEditScreen.js')} 
+				<View style = {styles.save}>
+					<Button primary raised upperCase={false} color="#36AC4A" text="Save"
+					onPress ={() => this.props.navigation.push('Home')} 
         			/>
         		</View>
         	</View>
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
 		backgroundColor: 'grey',
 		height: 1,
 	},
-	edit: {
+	save: {
 		flex: 1,
 		flexDirection: 'column',
 		width: 200,
