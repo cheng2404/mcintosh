@@ -20,7 +20,7 @@ export default class LineGraphComponent extends Component {
             backgroundColor: '#ffffff',
             backgroundGradientFrom: '#ffffff',
             backgroundGradientTo: '#ffffff',
-            decimalPlaces: 2, // optional, defaults to 2dp
+            decimalPlaces: 0, // optional, defaults to 2dp
             color: (opacity = 1) => `rgba(47,34,91, ${opacity})`,
             style: {
               borderRadius: 16
