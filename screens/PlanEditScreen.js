@@ -11,7 +11,7 @@ import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
 // import Divider from 'react-native-divider';
 
-export default class PlanScreen extends Component {
+export default class PlanEditScreen extends Component {
 
 	static navigationOptions = {
     	header: null
@@ -41,7 +41,7 @@ export default class PlanScreen extends Component {
 				</View>
 				<View style = {styles.save}>
 					<Button primary raised upperCase={false} color="#36AC4A" text="Save"
-					onPress ={() => this.props.navigation.push('Home')} 
+					onPress ={() => this.props.navigation.push('PlanScreen.js')} 
         			/>
         		</View>
         	</View>
