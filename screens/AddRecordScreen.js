@@ -25,11 +25,20 @@ export default class AddRecordScreen extends Component {
         {/* Heaer Component */}
 
 
+        <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
+            <Image
+              style = {styles.Imageback}
+              source = {require('../assets/images/back.png')}
+            />
+          
+          </TouchableOpacity>
+
+
        
         
 
 
-        <Text style={styles.TitleWords}>Record of your Saving or Spending </Text>
+        <Text style={styles.TitleWords}>Add Your Record </Text>
 
         <View style={styles.Box}>
           <TouchableOpacity style = {styles.SavingB} onPress={() => this.props.navigation.push('SavingRecord')}>
@@ -45,11 +54,13 @@ export default class AddRecordScreen extends Component {
             <Text style={styles. SSTitle}>Spending</Text>
             <Image
               style = {styles.ImageSpending}
-              source = {require('../assets/images/spending.png')}
+              source = {require('../assets/images/spending1.png')}
             />
 
           </TouchableOpacity>
 
+
+{/*
           <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
             <Image
               style = {styles.Iamgeclose}
@@ -57,7 +68,7 @@ export default class AddRecordScreen extends Component {
             />
           
           </TouchableOpacity>
-
+*/}
 
         </View>
 
@@ -81,12 +92,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
+  Imageback:{
+    width:vw(4),
+    resizeMode: 'contain',
+    marginRight: vw(91),
+    marginLeft: vw(5),
+    height: 70,
+    marginTop: -50,
+},
+
+
   TitleWords: {
     fontSize: 35,
-    fontWeight: 'bold',
-    fontFamily: 'Futura',
-    textAlign: 'left',
-    marginTop: 40,
+   // fontWeight: 'bold',
+   // fontFamily: 'Futura',
+    textAlign: 'center',
+    marginBottom: 600,
   },
   
   Box: {
@@ -97,46 +118,73 @@ const styles = StyleSheet.create({
   },
 
   SSTitle:{
-    fontFamily: 'Futura',
+   // fontFamily: 'Futura',
     fontSize: 25,
     textAlign: 'center',
     marginTop: 20,
-    fontWeight: 'bold',
+  //  fontWeight: 'bold',
     color: 'white'
   },
 
   SavingB: {
-    backgroundColor: '#2ECC71',
-    width: vw(90),
-    height :190,
-    borderRadius: 10,
+    backgroundColor: '#43964e',
+    height :150,
+    width: vw(90)- 32,
+    borderRadius: 20,
+    borderColor: 'white',
+    borderWidth: 1,
+    shadowColor: "#000",
+    marginLeft: 16,
+    marginBottom: 10,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+
   },
 
  
   ImageSaving: {
-    width: vw(26),
+    width: vw(18),
     resizeMode: 'contain',
     alignItems: 'center',
     marginLeft: vw(30),
     marginRight: vw(44),
-    marginTop: -320,
+    marginTop: -340,
   },
 
   SpendingB: {
-    backgroundColor: '#D35400',
-    width: vw(90),
-    height :190,
-    borderRadius: 10,
+    backgroundColor: '#808080',
+    width: vw(90)- 32,
+    height :150,
+    borderRadius: 20,
+    borderColor: 'white',
+    borderWidth: 1,
     marginTop: 20,
+    marginLeft: 16,
+    marginBottom: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
 
   ImageSpending: {
-    width: vw(30),
+    width: vw(21),
     resizeMode: 'contain',
     alignItems: 'center',
     marginLeft: vw(28),
     marginRight: vw(42),
-    marginTop: -165,
+    marginTop: -185,
   },
 
   Boxclose: {

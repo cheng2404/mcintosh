@@ -16,7 +16,7 @@ export default class SpendingRecordScreen extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {sa: '', de: ''};
+        this.state = {spa: '', de: ''};
       }
 
 
@@ -44,10 +44,10 @@ export default class SpendingRecordScreen extends Component {
           <Text style={styles.create_header}>SPENDING</Text>
           <TextInput
             style={styles.saving_input}
-            placeholder="Saving Amount:"
+            placeholder="Spending Amount:"
             keyboardType = "numeric"
-            onChangeText={(sa) => this.setState({sa})}
-            value={this.state.sa}
+            onChangeText={(spa) => this.setState({spa})}
+            value={this.state.spa}
           />
           <View style = {styles.blackLine} />
           <TextInput
