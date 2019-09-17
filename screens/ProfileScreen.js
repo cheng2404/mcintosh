@@ -48,7 +48,8 @@ export default class ProfileScreen extends Component {
 				<View style={styles.line}>
             	</View>
 
-            	<Text style = {styles.favourite}>My Favourites</Text>
+            	<Text style = {styles.favourite}
+				onPress ={() => this.props.navigation.push('ProfileCollection')} >My Favourites</Text>
             	<Image
           			style = {styles.i1}
           			source = {require('../assets/images/button.png')}
