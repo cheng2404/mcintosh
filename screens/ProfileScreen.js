@@ -52,7 +52,7 @@ export default class ProfileScreen extends Component {
             	<Image
           			style = {styles.i1}
           			source = {require('../assets/images/button.png')}
-          			onPress ={() => this.props.navigation.push('Plan')} 
+          			onPress ={() => this.props.navigation.push('ProfileCollection')} 
           			/>
             	<View style={styles.grey0}>
             	</View>
