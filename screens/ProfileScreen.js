@@ -124,11 +124,11 @@ const styles = StyleSheet.create({
 	logout: {
 		flexDirection: 'column',
     	width: 300,
-    	height: 20,
+    	height: 40,
     	borderWidth: 0,
     	borderColor: 'white',
-    	marginTop: vh(30),
-    	marginLeft: 28,
+    	marginTop: vh(40),
+    	marginLeft: vw(15),
 	},
 	 progressbar_view: {
 	 	marginLeft:10,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     	backgroundColor: '#43964e'
   	},
   	grey: {
-  		marginTop: vh(3),
+  		marginTop: vh(5),
     	width: '100%',
    		height: 25,
     	backgroundColor: '#e9e9e9',
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   		width: 35,
     	height: 35,
   		marginLeft: vw(85),
-    	marginTop: vh(-6)
+    	marginTop: vh(-3.5)
   	}
 
 
