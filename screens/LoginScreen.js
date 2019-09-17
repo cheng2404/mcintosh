@@ -6,9 +6,10 @@ import {
   Image,
   TextInput
 } from 'react-native';
-import { vw } from 'react-native-expo-viewport-units';
+// import { vw } from 'react-native-expo-viewport-units';
 
 import { Button } from 'react-native-material-ui';
+import { vw, vh } from 'react-native-expo-viewport-units';
 
 export default class LoginScreen extends Component {
 
@@ -96,35 +97,36 @@ const styles = StyleSheet.create({
   i: {
     width: 200,
     height: 150,
-    marginTop: 50,
+    marginTop: 100,
+    marginBottom: 10, 
   },
 
   loginContainer: {
 
     flexDirection: 'column',
-    width: 200,
-    height: 40,
+    width: 310,
+    height: 56,
     borderWidth: 0.5,
     borderColor: 'grey',
-    borderRadius: 5,
-    
+    borderRadius: 10,
+    marginTop: vh(-2),
   },
 
   pass: {
     flexDirection: 'column',
-    width: 200,
-    height: 40,
+    width: 310,
+    height: 56,
     marginLeft: 0,
     marginTop: 30,
     borderWidth: 0.5,
     borderColor: 'grey',
-    borderRadius: 5,
+    borderRadius: 10,
   },
 
   forgot: {
-    marginTop: 25,
-    fontSize: 12,
-    marginLeft: 100,
+    marginTop: vh(2),
+    fontSize: 16,
+    marginLeft: vw(46),
     color: 'lightblue',
   },
 
@@ -136,50 +138,53 @@ const styles = StyleSheet.create({
 
   login: {
     flexDirection: 'column',
-    width: 200,
-    height: 40,
+    width: 310,
+    height: 56,
     borderWidth: 0,
     borderColor: 'white',
-    borderRadius: 5,
+    borderRadius: 10,
     marginTop: 10,
+    marginBottom: -25
   },
 
   google: {
     flexDirection: 'column',
-    width: 200,
-    height: 40,
+    width: 310,
+    height: 56,
     borderWidth: 0.5,
     borderColor: 'grey',
-    borderRadius: 5,
+    borderRadius: 10,
   },
 
   google_text: {
     fontSize: 12,
-    marginLeft: 80,
-    marginTop:-18,
+    marginLeft: vw(40),
+    marginTop: -17,
+
   },
 
   facebook: {
     flexDirection: 'column',
-    width: 200,
-    height: 40,
+    width: 310,
+    height: 56,
     borderWidth: 0.5,
     borderColor: 'grey',
-    borderRadius: 5,
+    borderRadius: 10,
     marginBottom: 150,
-    marginTop: -15,
+    marginTop: -17,
   },
 
   facebook_text: {
     fontSize: 12,
-    marginLeft: 80,
-    marginTop:-18,
+    marginLeft: vw(40),
+    marginTop:-17,
   },
 
   q_text: {
     fontSize: 12,
-    marginLeft: 36,
-    marginTop:20,
+    marginLeft:vw(24),
+    marginTop:30,
+    marginBottom:10,
   },
 
   c_text: {
@@ -192,11 +197,17 @@ const styles = StyleSheet.create({
   photo: {
     width: 20,
     height: 20,
-    marginLeft: 40,
-    marginTop:10,
+    marginLeft: vw(30),
+    marginTop:17,
   },
   register_input : {
     height: 40,
-    width: vw(100)-30,
+    // width: vw(10),
+    marginTop:8,
+    marginLeft: vw(32),
   },
+  // Button:{
+  //   height: 56,
+  //   width:310,
+  // }
 })
