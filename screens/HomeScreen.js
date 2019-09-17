@@ -3,7 +3,8 @@ import {
   Text,
   View,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from 'react-native';
 
 import Header from '../components/Dashboard/Header'
@@ -73,76 +74,78 @@ export default class HomeScreen extends Component {
   // TODO: Add contents on the HOME Screen.
   render() {    
     return (
-      <View style={styles.container}>
+      <ScrollView>
+        <View style={styles.container}>
 
-        {/* Heaer Component */}
-        <Header/>
+          {/* Heaer Component */}
+          <Header/>
 
-        {/* Goal */}
-        <View style={styles.goal_container}>
+          {/* Goal */}
+          <View style={styles.goal_container}>
 
-          {/* Goal Container Header */}
-          <Text style={styles.goal_container_header_sub}>You've already saved</Text>
-          <View style={styles.goal_container_header}>
-            <Text style={styles.goal_container_header_doller}>$</Text>
-            <Text style={styles.goal_container_header_main}>10,060</Text>
+            {/* Goal Container Header */}
+            <Text style={styles.goal_container_header_sub}>You've already saved</Text>
+            <View style={styles.goal_container_header}>
+              <Text style={styles.goal_container_header_doller}>$</Text>
+              <Text style={styles.goal_container_header_main}>10,060</Text>
+            </View>
+
+            {/* Goal Container Main */}
+            <View style={styles.goal_container_main}>
+
+              {/* Progress Bar */}
+              <View style={styles.progressbar_view}>
+                <Text style={styles.progressbar_text}></Text>
+              </View>
+
+              {/* Current State */}
+              <View style={styles.current_state_view}>
+                <Text style={styles.current_state_text}>$ 10,060</Text>
+                <Text style={styles.current_state_text}>$ 300,000</Text>
+              </View>
+            </View>
           </View>
 
-          {/* Goal Container Main */}
-          <View style={styles.goal_container_main}>
+          {/* Monthly Goal */}
 
-            {/* Progress Bar */}
-            <View style={styles.progressbar_view}>
-              <Text style={styles.progressbar_text}></Text>
+          <View style={styles.monthly_goal}>
+
+            {/* Monthly Goal Header */}
+            <Text style={styles.monthly_goal_header_sub}>Monthly Goal (1/9 ~ 30/9)</Text>
+
+            <View style={styles.monthly_goal_container}>
+              <Text style={styles.monthly_goal_doller}>$</Text>
+              <Text style={styles.monthly_goal_number}>1,800</Text>
             </View>
 
-            {/* Current State */}
-            <View style={styles.current_state_view}>
-              <Text style={styles.current_state_text}>$ 10,060</Text>
-              <Text style={styles.current_state_text}>$ 300,000</Text>
+            {/* Goal Container Main */}
+            <View style={styles.goal_container_main}>
+
+              {/* Progress Bar */}
+              <View style={styles.monthly_progressbar_view}>
+                <Text style={styles.monthly_progressbar_text}></Text>
+              </View>
+
+              {/* Current State */}
+              <View style={styles.monthly_current_state_view}>
+                <Text style={styles.monthly_current_state_text}>$ 1,800</Text>
+                <Text style={styles.monthly_current_state_text}>$ 2,500</Text>
+              </View>
             </View>
+          </View>
+
+          {/* Saving History */}
+          <View style={styles.history_container}>
+            <View style={styles.history_header}>
+              <Text style={styles.history_header_title}>Saving History</Text>
+              <TouchableOpacity onPress={() => this.props.navigation.push('SavingHistory')} >
+                <Text style={styles.history_header_link}>More</Text>
+              </TouchableOpacity>
+            </View>
+            <LineChartComponent data={this.state.monthlyData} label={this.state.monthlyLabel} />
           </View>
         </View>
-
-        {/* Monthly Goal */}
-
-        <View style={styles.monthly_goal}>
-
-          {/* Monthly Goal Header */}
-          <Text style={styles.monthly_goal_header_sub}>Monthly Goal (1/9 ~ 30/9)</Text>
-
-          <View style={styles.monthly_goal_container}>
-            <Text style={styles.monthly_goal_doller}>$</Text>
-            <Text style={styles.monthly_goal_number}>1,800</Text>
-          </View>
-
-           {/* Goal Container Main */}
-           <View style={styles.goal_container_main}>
-
-            {/* Progress Bar */}
-            <View style={styles.monthly_progressbar_view}>
-              <Text style={styles.monthly_progressbar_text}></Text>
-            </View>
-
-            {/* Current State */}
-            <View style={styles.monthly_current_state_view}>
-              <Text style={styles.monthly_current_state_text}>$ 1,800</Text>
-              <Text style={styles.monthly_current_state_text}>$ 2,500</Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Saving History */}
-        <View style={styles.history_container}>
-          <View style={styles.history_header}>
-            <Text style={styles.history_header_title}>Saving History</Text>
-            <TouchableOpacity onPress={() => this.props.navigation.push('SavingHistory')} >
-              <Text style={styles.history_header_link}>More</Text>
-            </TouchableOpacity>
-          </View>
-          <LineChartComponent data={this.state.monthlyData} label={this.state.monthlyLabel} />
-        </View>
-      </View>
+      </ScrollView>
     )
   }
 }
