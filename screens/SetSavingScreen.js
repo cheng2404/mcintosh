@@ -5,9 +5,11 @@ import {
   StyleSheet,
   Image,
   TextInput,
+  Modal,
+  TouchableHighlight,
 } from 'react-native';
 
-import { vw } from 'react-native-expo-viewport-units';
+import { vw,vh } from 'react-native-expo-viewport-units';
 
 import { Button } from 'react-native-material-ui'
 
@@ -15,9 +17,19 @@ export default class SetSavingScreen extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {sa: '', sp: ''};
+    this.state = {sa: '',
+                  sp: '', 
+                  re: 0,
+    };
   }
 
+  calculateSave = () => {
+    const { sa, sp } = this.state;
+
+    this.setState({
+      re: Number(sa) / Number(sp)
+    });
+  }
   // Move to HOME Screen
   moveToHome() {
     this.props.navigation.push('Home')
@@ -45,17 +57,19 @@ export default class SetSavingScreen extends Component {
             value={this.state.sa}
           />
           <View style = {styles.blackLine} />
-          <TextInput
-            style={styles.register_input}
-            placeholder="Saving Period:"
-            onChangeText={(sp) => this.setState({sp})}
-            value={this.state.sp}
-          />
+            <TextInput
+              style={styles.register_input}
+              placeholder="Saving Period:"
+              onChangeText={(sp) => this.setState({sp})}
+              value={this.state.sp}
+              onEndEditing = {() => this.calculateSave()}
+            />
           <View style = {styles.grayLine} />
         </View>
         <View style={styles.submit_area}>
-          <Text style={styles.saving_message}>Savings required in one month:</Text>
-          <Text style={styles.saving_message}>$</Text>
+          <Text style={styles.saving_message}
+            onPress={() => this.calculateSave()}>Savings required in one month:</Text>
+          <Text>${`${this.state.re}`}</Text>
           {/*<Button
           style={styles.signup_button}
           onPress={() => this.moveToHome()}
@@ -63,7 +77,9 @@ export default class SetSavingScreen extends Component {
           /> */}
           {/* Material UI Test */}
           <Button primary raised upperCase={false} text="Sign up"
-          onPress={() => this.moveToHome()}/> 
+          
+          onPress={() => this.moveToHome()}
+          /> 
         </View>
       </View>   
       );
@@ -153,6 +169,7 @@ const styles = StyleSheet.create({
     height: 2,
     width: vw(100)- 50,
     margin: 2,
-  }
+  },
+
   
 })
