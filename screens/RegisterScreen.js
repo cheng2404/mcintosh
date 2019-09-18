@@ -56,8 +56,13 @@ export default class RegisterScreen extends Component {
         </View>
         <View style={styles.submit_area}>
           <Text style={styles.privacy_message}>By signing up</Text>
-          <Text style={styles.privacy_message}>You accept the Terms of Service and Privacy Policy.</Text>
-          <Button primary raised upperCase={false} text="Next"
+          <Text style={styles.privacy_message}>Check our &nbsp;
+          <Text style={styles.privacy_link}>Terms of Service</Text>
+          &nbsp; and &nbsp;
+          <Text style={styles.privacy_link}>Privacy Policy</Text>
+          .</Text>
+          <Button raised upperCase={false} text="Next"
+          style={styles.nextButton}
           onPress={() => this.moveToSetSaving()}/> 
         </View>
       </View>   
@@ -117,6 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginRight: vw(30),
+    marginBottom: 10,
   },
 
   register_input : {
@@ -133,7 +139,17 @@ const styles = StyleSheet.create({
   },
 
   privacy_message : {
-    marginBottom: 5,
+    marginBottom: 10,
+  },
+
+  privacy_link: {
+    color: "#00a3cc",
+    textDecorationLine: "underline",
+    marginBottom: 10,
+  },
+
+  nextButton: {
+    marginTop: 10,
   },
 
   blackLine:{

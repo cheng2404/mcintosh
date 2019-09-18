@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     marginTop: vh(2),
     fontSize: 16,
     marginLeft: vw(46),
-    color: 'lightblue',
+    color:  "#00a3cc",
   },
 
   text: {
