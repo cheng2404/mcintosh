@@ -64,13 +64,7 @@ export default class SpendingRecordScreen extends Component {
             			onPress ={() => this.props.navigation.push('AddRecord')} 
         				/>
         	</View>
-
-
         </View>
-          
-       
-  
-       
       </View>
     )
   }
