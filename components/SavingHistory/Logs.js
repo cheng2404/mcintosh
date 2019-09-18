@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
+import { AsyncStorage } from 'react-native';
 
 export default class Logs extends Component {
 
@@ -27,9 +28,7 @@ export default class Logs extends Component {
       count++;
     }
 
-    this.setState(() => ({
-      logs: logs
-    }))
+    return logs
   }
 
   showLogs() {
@@ -58,8 +57,22 @@ export default class Logs extends Component {
     return logs
   }
 
-  componentDidMount() {
-    this.createSampleLogs()
+  async componentDidMount() {
+    const sampleLogs = this.createSampleLogs()
+
+    var records = await AsyncStorage.getItem('records')
+    if(records) {
+      records = JSON.parse(records)
+    }
+    else {
+      records = []
+    }
+
+    const logs = records.concat(sampleLogs)
+
+    this.setState(() => ({
+      logs: logs
+    }))
   }
 
   render() {
