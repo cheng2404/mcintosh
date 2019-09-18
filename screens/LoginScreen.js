@@ -27,7 +27,7 @@ export default class LoginScreen extends Component {
       <View style={styles.container}>
           <Image
           style = {styles.i}
-          source = {require('../assets/images/logo.png')}
+          source = {require('../assets/images/logo_large.png')}
           />
           <View style={styles.loginContainer}>
             <TextInput
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   },
 
   i: {
-    width: 200,
+    width: 240,
     height: 150,
     marginTop: 100,
     marginBottom: 30, 
