@@ -69,7 +69,7 @@ export default class LoginScreen extends Component {
           <Text style = {styles.q_text}>Doesn't have an account?</Text>          
           {/*<Text style = {styles.c_text}>Create now!</Text> */}
           <Button
-            primary raised upperCase={false} text="Create now"
+            primary raised upperCase={false} text="Create Your Account"
             onPress ={() => this.props.navigation.push('Register')} 
           />
           </View>
