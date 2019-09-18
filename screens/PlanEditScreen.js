@@ -9,22 +9,29 @@ import {
 import { vw, vh } from 'react-native-expo-viewport-units';
 import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
+import { placeholder } from '@babel/types';
 // import Divider from 'react-native-divider';
+
 
 export default class PlanEdit extends Component {
 
 	static navigationOptions = {
     	header: null
-  	};
+	  };
+	  
+	constructor(props) {
+		super(props);
+		this.state = { tsg: '$10k', cp: '10/09/2019', ht: 'Apartment', r:'Toowong' };
+	};
+
 
 	render(){
 		return (
 			<View style = {styles.nothing}>
 				<View style = {styles.Topic}>
 
-
 					<Text style = {styles.back}
-						onPress ={() => this.props.navigation.push('Plan')}>Back</Text>
+						onPress ={() => this.props.navigation.push('Plan')}>Cancel</Text>
 					<Text style = {styles.plan}>Plan</Text>
 
 				</View>
@@ -32,19 +39,72 @@ export default class PlanEdit extends Component {
 				<View style = {styles.column}>
 					<Text style = {styles.attribute}>Total Saving Goal</Text>
 					{/* <Divider/> */}
+					
+					<View style = {styles.attribute}>
+						<TextInput
+							style={styles.input}
+							onChangeText={(tsg) => this.setState({tsg})}
+							value={this.state.tsg}
+						/>
+					</View>
+					
+
+
+					<View style={styles.line}>
+            		</View>
+					
+
 					<Text style = {styles.attribute}>Completion Period</Text>
-					{/* <Divider/> */}
+					
+					<View style = {styles.attribute}>
+						<TextInput
+							style={styles.input}
+							onChangeText={(cp) => this.setState({cp})}
+							value={this.state.cp}
+						/>
+					</View>
+
+					<View style={styles.line}>
+            		</View>
+					
 					<Text style = {styles.attribute}>House Type</Text>
-					{/* <Divider/> */}
+					
+					<View style = {styles.attribute}>
+						<TextInput
+							style={styles.input}
+							onChangeText={(ht) => this.setState({ht})}
+							value={this.state.ht}
+						/>
+					</View>
+
+					<View style={styles.line}>
+            		</View>
+
 					<Text style = {styles.attribute}>Region</Text>
+
+					<View style = {styles.attribute}>
+						<TextInput
+							style={styles.input}
+							onChangeText={(r) => this.setState({r})}
+							value={this.state.r}
+						/>
+					</View>
+
+					<View style={styles.line}>
+            		</View>
+
+					
 				
 				</View>
+				
 				<View style = {styles.save}>
 					<Button primary raised upperCase={false} color="#36AC4A" text="Save"
 					onPress ={() => this.props.navigation.push('Plan')} 
         			/>
         		</View>
+				
         	</View>
+			
 
 		)
 	}
@@ -85,10 +145,10 @@ const styles = StyleSheet.create({
 	attribute: {
 		fontSize: 15,
 		marginLeft: vw(10),
-		marginBottom: vh(5),
+		marginBottom: vh(1),
 	
 		// paddingTop: 15,
-    	color: 'black',
+    	// color: 'black',
 	},
 	grey: {
 		flex: 1,
@@ -104,8 +164,8 @@ const styles = StyleSheet.create({
 		borderWidth: 0,
 		borderColor: 'white',
 		borderRadius: 5,
-		marginTop: vh(-10),
-		marginLeft: vw(25),
+		marginTop: vh(12),
+		marginLeft: vw(23),
 		color: '#8A2586',
 	},
 	nothing: {
@@ -115,15 +175,39 @@ const styles = StyleSheet.create({
     	alignItems: 'flex-start',
     	backgroundColor: '#fff',
 	},
+
+	input: {
+		// height: 40, 
+		// borderColor: 'lightgray', 
+		// borderBottomWidth: 1,
+		width: 100,
+		height: 40,
+		marginTop: vh(-4.5),
+		// marginBottom: vh(-),
+		marginLeft: vw(50),
+		textAlign: 'right',
+		color: 'gray',
+	},
 	
-	// line: {
-	// 	marginTop: vh(1),
-	// 	width: '100%',
-	// 	 height: 3,
-	//   backgroundColor: '#e9e9e9',
-	//   borderRadius: 0,
-	//   overflow: 'hidden'
-	// },
+	underline: {
+		// height: 40, 
+		borderColor: 'gray', 
+		
+	},
+
+	line: {
+		// marginTop: vh(10),
+		width: 290,
+		height: 1,
+		backgroundColor: 'lightgray',
+		// borderRadius: 0,
+		// borderColor:'lightgray',
+		overflow: 'hidden',
+		marginLeft: vw(10),
+		marginTop: vh(-1),
+		marginBottom: vh(5),
+	},
+
 
 
 
