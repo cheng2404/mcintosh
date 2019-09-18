@@ -107,13 +107,13 @@ const styles = StyleSheet.create({
    // fontWeight: 'bold',
    // fontFamily: 'Futura',
     textAlign: 'center',
-    marginBottom: 600,
+    marginBottom: 650,
   },
   
   Box: {
     height: vw(100),
     width: vw(90),
-    marginTop: 170,
+    marginTop: 290,
     position: 'absolute',
   },
 

@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
       marginRight: vw(91),
       marginLeft: vw(5),
       height: 70,
-      marginTop: 5,
+      marginTop: 30,
   },
 
   //lll
   saving_form : {
     flex: 2,
-    marginTop: 30,
+    marginTop: 130,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
