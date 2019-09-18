@@ -29,6 +29,60 @@ export default class HomeScreen extends Component {
   }
 
   async componentDidMount() {
+    
+    if (!(await AsyncStorage.getItem('weeklyData'))) {
+      console.log(!(await AsyncStorage.getItem('weeklyData')))
+      this.generateRandomData()
+    }
+
+    const monthlyData = JSON.parse(await AsyncStorage.getItem('monthlyData'))
+    const monthlyLabel = JSON.parse(await AsyncStorage.getItem('monthlyLabel'))
+
+    await this.setSampleTotalAmount()
+
+    this.setState(() => ({
+      monthlyData: monthlyData,
+      monthlyLabel: monthlyLabel,
+      currentMonthAmount: monthlyData[monthlyData.length - 1]
+    }))
+  }
+
+  async setSampleTotalAmount() {
+    var totalAmount = 0
+    const weeklyData = JSON.parse(await AsyncStorage.getItem('weeklyData'))
+    const monthlyData = JSON.parse(await AsyncStorage.getItem('monthlyData'))
+    const yearlyData = JSON.parse(await AsyncStorage.getItem('yearlyData')) 
+
+    weeklyData.forEach(element => {
+      totalAmount += element
+    })
+
+    monthlyData.forEach(element => {
+      totalAmount += element
+    })
+
+    yearlyData.forEach(element => {
+      totalAmount += element
+    })
+
+    // Add added records in the total amount
+    var records = await AsyncStorage.getItem('records')
+
+    // For Reset the input
+    // await AsyncStorage.setItem('records', JSON.stringify([]))
+
+    if(records) {
+      records = JSON.parse(records)
+      records.forEach(element => {
+        totalAmount += parseInt(element.amount)
+      })
+    }
+    this.setState(() => ({
+      totalAmount: totalAmount
+    }))
+  }
+
+  async generateRandomData() {
     const sampleWeekData = [
       Math.floor(Math.random() * 100),
       Math.floor(Math.random() * 100),
@@ -68,37 +122,6 @@ export default class HomeScreen extends Component {
     await AsyncStorage.setItem('weeklyLabel', JSON.stringify(sampleWeekLabel))
     await AsyncStorage.setItem('monthlyLabel', JSON.stringify(sampleMonthLabel))
     await AsyncStorage.setItem('yearlyLabel', JSON.stringify(sampleYearLabel))
-
-    await this.setSampleTotalAmount()
-
-    this.setState(() => ({
-      monthlyData: sampleMonthData,
-      monthlyLabel: sampleMonthLabel,
-      currentMonthAmount: sampleMonthData[sampleMonthData.length - 1]
-    }))
-  }
-
-  async setSampleTotalAmount() {
-    var totalAmount = 0
-    const weeklyData = JSON.parse(await AsyncStorage.getItem('weeklyData'))
-    const monthlyData = JSON.parse(await AsyncStorage.getItem('monthlyData'))
-    const yearlyData = JSON.parse(await AsyncStorage.getItem('yearlyData'))
-
-    weeklyData.forEach(element => {
-      totalAmount += element
-    })
-
-    monthlyData.forEach(element => {
-      totalAmount += element
-    })
-
-    yearlyData.forEach(element => {
-      totalAmount += element
-    })
-
-    this.setState(() => ({
-      totalAmount: totalAmount
-    }))
   }
 
   setFormat(value) {
