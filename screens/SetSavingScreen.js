@@ -7,11 +7,17 @@ import {
   TextInput,
   Modal,
   TouchableHighlight,
+  Picker,
+  TouchableOpacity,
 } from 'react-native';
 
 import { vw,vh } from 'react-native-expo-viewport-units';
 
-import { Button } from 'react-native-material-ui'
+import ReactNativePickerModule from 'react-native-picker-module';
+
+import { Button } from 'react-native-material-ui';
+
+
 
 export default class SetSavingScreen extends Component {
 
@@ -20,16 +26,74 @@ export default class SetSavingScreen extends Component {
     this.state = {sa: '',
                   sp: '', 
                   re: 0,
+                  month: '',
+                  selectedValue: null,
+                  data: [
+                    "3 Months",
+                    "6 Months",
+                    "12 Months",
+                    "18 Months",
+                    "24 Months",
+                    "30 Months",
+                    "36 Months"
+                  ],
+                  word: 'Select Saving Period',
+                  mon: [3,6,12,18,24,30,36],
     };
   }
 
-  calculateSave = () => {
-    const { sa, sp } = this.state;
+  
 
-    this.setState({
-      re: Number(sa) / Number(sp)
-    });
+  calculateSave = () => {
+    const { sa, sp,re} = this.state;
+
+    switch(this.state.word){
+      case "3 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[0])
+        });
+      break;
+      case "6 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[1])
+        });
+      break;
+      case "12 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[2])
+        });
+      break;
+      case "18 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[3])
+        });
+      break;
+      case "24 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[4])
+        });
+      break;
+      case "30 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[5])
+        });
+      break;
+      case "36 Months":
+        this.setState({
+          re: Number(sa) / Number(this.state.mon[6])
+        });
+      break;
+    }
+
+
+
+
+    
   }
+
+ 
+
+
   // Move to HOME Screen
   moveToHome() {
     this.props.navigation.push('Home')
@@ -57,12 +121,20 @@ export default class SetSavingScreen extends Component {
             value={this.state.sa}
           />
           <View style = {styles.blackLine} />
-            <TextInput
-              style={styles.register_input}
-              placeholder="Saving Period:"
-              onChangeText={(sp) => this.setState({sp})}
-              value={this.state.sp}
-              onEndEditing = {() => this.calculateSave()}
+            
+            <TouchableOpacity 
+            onPress={() => {this.pickerRef.show()}}
+            style={styles.register_input}>
+              <Text
+              style={styles.x}>{this.state.word}</Text>
+            </TouchableOpacity>
+
+            <ReactNativePickerModule
+              pickerRef={e => this.pickerRef = e}
+              value={this.state.selectedValue}
+              title={"Select a saving period"}
+              items={this.state.data}
+              onValueChange={(index) => {this.setState({word: index})}}
             />
           <View style = {styles.grayLine} />
         </View>
@@ -85,6 +157,9 @@ export default class SetSavingScreen extends Component {
       );
   }
 }
+
+
+
 
 // TODO: Add styles on the REGISTER Screen
 const styles = StyleSheet.create({
@@ -169,7 +244,12 @@ const styles = StyleSheet.create({
     height: 2,
     width: vw(100)- 50,
     margin: 2,
+    
   },
+
+  x: {
+    marginTop: vh(1)
+  }
 
   
 })
