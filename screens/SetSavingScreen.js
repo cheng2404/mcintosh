@@ -119,6 +119,7 @@ export default class SetSavingScreen extends Component {
             placeholder="Saving Amount:"
             onChangeText={(sa) => this.setState({sa})}
             value={this.state.sa}
+            onEndEditing={() => this.calculateSave()}
           />
           <View style = {styles.blackLine} />
             
