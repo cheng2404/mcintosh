@@ -3,11 +3,8 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
-  TextInput,
 } from 'react-native';
 import { vw, vh } from 'react-native-expo-viewport-units';
-import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
 // import Divider from 'react-native-divider';
 
@@ -20,13 +17,12 @@ export default class PlanScreen extends Component {
 	render(){
 		return (
 			<View style = {styles.nothing}>
+
+				{/* Header */}
 				<View style = {styles.Topic}>
-
-
 					<Text style = {styles.back}
 						onPress ={() => this.props.navigation.push('Profile')}>Back</Text>
 					<Text style = {styles.plan}>Plan</Text>
-
 				</View>
 
 				<View style = {styles.column}>
@@ -37,15 +33,15 @@ export default class PlanScreen extends Component {
 					<Text style = {styles.attribute}>House Type</Text>
 					{/* <Divider/> */}
 					<Text style = {styles.attribute}>Region</Text>
-				
 				</View>
-				<View style = {styles.edit}>
-					<Button primary raised upperCase={false} color="#8A2586" text="Edit"
-					onPress ={() => this.props.navigation.push('PlanEdit')} 
-        			/>
-        		</View>
-        	</View>
 
+				<View style = {styles.edit}>
+					<Button 
+						primary raised upperCase={false} color="#8A2586" text="Edit"
+						onPress ={() => this.props.navigation.push('PlanEdit')} 
+        	/>
+        </View>
+    	</View>
 		)
 	}
 }
@@ -124,7 +120,5 @@ const styles = StyleSheet.create({
 	//   borderRadius: 0,
 	//   overflow: 'hidden'
 	// },
-
-
 
 })
