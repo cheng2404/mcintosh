@@ -48,6 +48,7 @@ export default class RegisterScreen extends Component {
           <View style = {styles.blackLine} />
           <TextInput
             style={styles.register_input}
+            secureTextEntry={true}
             placeholder="Password: "
             onChangeText={(pass) => this.setState({pass})}
             value={this.state.pass}
@@ -61,7 +62,7 @@ export default class RegisterScreen extends Component {
           &nbsp; and &nbsp;
           <Text style={styles.privacy_link}>Privacy Policy</Text>
           .</Text>
-          <Button raised upperCase={false} text="Next"
+          <Button primary raised={true} upperCase={false} text="Next"
           style={styles.nextButton}
           onPress={() => this.moveToSetSaving()}/> 
         </View>

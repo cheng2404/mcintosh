@@ -50,37 +50,37 @@ export default class SetSavingScreen extends Component {
     switch(this.state.word){
       case "3 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[0])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[0]))
         });
       break;
       case "6 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[1])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[1]))
         });
       break;
       case "12 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[2])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[2]))
         });
       break;
       case "18 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[3])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[3]))
         });
       break;
       case "24 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[4])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[4]))
         });
       break;
       case "30 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[5])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[5]))
         });
       break;
       case "36 Months":
         this.setState({
-          re: Number(sa) / Number(this.state.mon[6])
+          re: Math.ceil(Number(sa) / Number(this.state.mon[6]))
         });
       break;
     }
@@ -135,7 +135,8 @@ export default class SetSavingScreen extends Component {
               value={this.state.selectedValue}
               title={"Select a saving period"}
               items={this.state.data}
-              onValueChange={(index) => {this.setState({word: index})}}
+              onValueChange={(index) => {this.setState({word: index})
+                              this.calculateSave()}}
             />
           <View style = {styles.grayLine} />
         </View>
