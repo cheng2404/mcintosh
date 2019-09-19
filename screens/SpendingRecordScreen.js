@@ -7,40 +7,38 @@ import {
   TextInput,
 } from 'react-native';
 
-import Header from '../components/Dashboard/Header'
-import { vw, vmax } from 'react-native-expo-viewport-units';
+import { vw } from 'react-native-expo-viewport-units';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { vh } from 'react-native-expo-viewport-units';
 import { Button } from 'react-native-material-ui';
 export default class SpendingRecordScreen extends Component {
 
     constructor(props) {
-        super(props);
-        this.state = {spa: '', de: ''};
-      }
-
+      super(props);
+      this.state = {
+        spa: '',
+        de: ''
+      };
+    }
 
   // To hide the NavigationBar from Home Screen
   static navigationOptions = {
     header: null
   };
 
-  // TODO: Add contents on the HOME Screen.
   render() {
     return (
       <View style={styles.container}>
+            
+        {/* Heaer Component */}
+        <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
+          <Image
+            style = {styles.Imageback}
+            source = {require('../assets/images/back.png')}
+          />
+        </TouchableOpacity>
 
-            {/* Heaer Component */}
-
-            <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
-            <Image
-              style = {styles.Imageback}
-              source = {require('../assets/images/back.png')}
-            />
-          
-          </TouchableOpacity>
-
-          <View style={styles.saving_form}>
+        <View style={styles.saving_form}>
           <Text style={styles.create_header}>SPENDING</Text>
           <TextInput
             style={styles.saving_input}
@@ -49,20 +47,23 @@ export default class SpendingRecordScreen extends Component {
             onChangeText={(spa) => this.setState({spa})}
             value={this.state.spa}
           />
+
           <View style = {styles.blackLine} />
+
           <TextInput
             style={styles.saving_input}
             placeholder="Description:"
             onChangeText={(de) => this.setState({de})}
             value={this.state.de}
           />
+
           <View style = {styles.grayLine} />
 
           <View style = {styles.SubB}>
 						<Button color="red"
-            			primary raised upperCase={false} text="Submit"
-            			onPress ={() => this.props.navigation.push('AddRecord')} 
-        				/>
+            	primary raised upperCase={false} text="Submit"
+          		onPress ={() => this.props.navigation.push('AddRecord')} 
+      			/>
         	</View>
         </View>
       </View>
@@ -70,8 +71,6 @@ export default class SpendingRecordScreen extends Component {
   }
 }
 
-
-// TODO: Add styles on the HOME Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -82,12 +81,12 @@ const styles = StyleSheet.create({
   },
 
   Imageback:{
-      width:vw(4),
-      resizeMode: 'contain',
-      marginRight: vw(91),
-      marginLeft: vw(5),
-      height: 70,
-      marginTop: 30,
+    width:vw(4),
+    resizeMode: 'contain',
+    marginRight: vw(91),
+    marginLeft: vw(5),
+    height: 70,
+    marginTop: 30,
   },
 
   //lll
@@ -100,7 +99,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
-
   create_header : {
     color: '#000',
     fontSize: 35,
@@ -112,7 +110,6 @@ const styles = StyleSheet.create({
     height: 40,
     width: vw(100)-30,
     marginTop: 20,
-    
   },
 
   blackLine:{
@@ -129,7 +126,6 @@ const styles = StyleSheet.create({
     margin: 2,
   },
 
-
   SubB: {
     flexDirection: 'column',
     width: 300,
@@ -138,6 +134,5 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     marginTop: vh(10),
     marginLeft: 28,
-},
-  
+  },
 })
