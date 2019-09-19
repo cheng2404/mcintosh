@@ -3,12 +3,8 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
-  TextInput,
 } from 'react-native';
 import { vw, vh } from 'react-native-expo-viewport-units';
-import Header from '../components/Dashboard/Header';
-import { Button } from 'react-native-material-ui';
 // import Divider from 'react-native-divider';
 
 export default class ProfileCollectionScreen extends Component {
@@ -20,18 +16,17 @@ export default class ProfileCollectionScreen extends Component {
 	render(){
 		return (
 			<View style = {styles.nothing}>
+
+				{/* Header */}
 				<View style = {styles.Topic}>
-
-
 					<Text style = {styles.back}
 						onPress ={() => this.props.navigation.push('Profile')}>Back</Text>
 					<Text style = {styles.favour}>My Favourites</Text>
-
 				</View>
 
-				
-        	</View>
+				{/* Contents */}
 
+      </View>
 		)
 	}
 }
@@ -110,7 +105,5 @@ const styles = StyleSheet.create({
 	//   borderRadius: 0,
 	//   overflow: 'hidden'
 	// },
-
-
 
 })
