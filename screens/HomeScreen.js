@@ -31,7 +31,6 @@ export default class HomeScreen extends Component {
   async componentDidMount() {
     
     if (!(await AsyncStorage.getItem('weeklyData'))) {
-      console.log(!(await AsyncStorage.getItem('weeklyData')))
       this.generateRandomData()
     }
 
@@ -82,7 +81,10 @@ export default class HomeScreen extends Component {
     }))
   }
 
+  // For the first time
   async generateRandomData() {
+    
+    // Generate Sample Graph Data Set
     const sampleWeekData = [
       Math.floor(Math.random() * 100),
       Math.floor(Math.random() * 100),
@@ -128,8 +130,7 @@ export default class HomeScreen extends Component {
     return String(value).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
   }
 
-  // TODO: Add contents on the HOME Screen.
-  render() {    
+ render() {    
     return (
       <ScrollView>
         <View style={styles.container}>
@@ -164,7 +165,6 @@ export default class HomeScreen extends Component {
           </View>
 
           {/* Monthly Goal */}
-
           <View style={styles.monthly_goal}>
 
             {/* Monthly Goal Header */}
@@ -208,7 +208,6 @@ export default class HomeScreen extends Component {
 }
 
 
-// TODO: Add styles on the HOME Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -219,7 +218,6 @@ const styles = StyleSheet.create({
 
   // Goal Container
   goal_container: {
-    // flex: 1,
     flexDirection: 'column',
     width: vw(100)- 32,
     height: 180,
