@@ -7,8 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 
-import Header from '../components/Dashboard/Header'
-import { vw, vmax } from 'react-native-expo-viewport-units';
+import { vw } from 'react-native-expo-viewport-units';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { vh } from 'react-native-expo-viewport-units';
 import { Button } from 'react-native-material-ui';
@@ -18,9 +17,12 @@ export default class SavingRecordScreen extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {sa: '', de: ''};
-  }
 
+    this.state = {
+      sa: '', 
+      de: ''
+    };
+  }
 
   // To hide the NavigationBar from Home Screen
   static navigationOptions = {
@@ -47,22 +49,19 @@ export default class SavingRecordScreen extends Component {
     this.props.navigation.push('Home')
   }
 
-  // TODO: Add contents on the HOME Screen.
   render() {
     return (
       <View style={styles.container}>
 
-            {/* Heaer Component */}
+        {/* Header */}
+        <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
+          <Image
+            style = {styles.Imageback}
+            source = {require('../assets/images/back.png')}
+          />
+        </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
-            <Image
-              style = {styles.Imageback}
-              source = {require('../assets/images/back.png')}
-            />
-          
-          </TouchableOpacity>
-
-          <View style={styles.saving_form}>
+        <View style={styles.saving_form}>
           <Text style={styles.create_header}>SAVING</Text>
           <TextInput
             style={styles.saving_input}
@@ -71,13 +70,16 @@ export default class SavingRecordScreen extends Component {
             onChangeText={(sa) => this.setState({sa})}
             value={this.state.sa}
           />
+
           <View style = {styles.blackLine} />
+
           <TextInput
             style={styles.saving_input}
             placeholder="Description:"
             onChangeText={(de) => this.setState({de})}
             value={this.state.de}
           />
+
           <View style = {styles.grayLine} />
 
           <View style = {styles.SubB}>
@@ -86,13 +88,7 @@ export default class SavingRecordScreen extends Component {
           		onPress ={() => this.addRecord()} 
       			/>
         	</View>
-
-
-        </View>
-          
-       
-  
-       
+        </View>     
       </View>
     )
   }
@@ -110,12 +106,12 @@ const styles = StyleSheet.create({
   },
 
   Imageback:{
-      width:vw(4),
-      resizeMode: 'contain',
-      marginRight: vw(91),
-      marginLeft: vw(5),
-      height: 70,
-      marginTop: 30,
+    width:vw(4),
+    resizeMode: 'contain',
+    marginRight: vw(91),
+    marginLeft: vw(5),
+    height: 70,
+    marginTop: 30,
   },
 
   //lll
@@ -140,7 +136,6 @@ const styles = StyleSheet.create({
     height: 40,
     width: vw(100)-30,
     marginTop: 20,
-    
   },
 
   blackLine:{
@@ -157,7 +152,6 @@ const styles = StyleSheet.create({
     margin: 2,
   },
 
-
   SubB: {
     flexDirection: 'column',
     width: 300,
@@ -166,6 +160,5 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     marginTop: vh(10),
     marginLeft: 28,
-},
-  
+  },
 })
