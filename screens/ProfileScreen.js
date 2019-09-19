@@ -61,7 +61,7 @@ export default class ProfileScreen extends Component {
 				<View style = {styles.container}>
 					<View style = {styles.logout}>
 						<Button
-            			primary raised upperCase={false} text="Log out"
+            			accent raised={true} upperCase={false} text="Log out"
             			onPress ={() => this.props.navigation.push('Login')} 
         				/>
         			</View>
@@ -124,12 +124,13 @@ const styles = StyleSheet.create({
 	},
 	logout: {
 		flexDirection: 'column',
-    	width: 300,
+    	width: 150,
     	height: 40,
     	borderWidth: 0,
     	borderColor: 'white',
     	marginTop: vh(40),
-    	marginLeft: vw(15),
+		marginLeft: vw(30),
+		marginTop: vh(5),
 	},
 	 progressbar_view: {
 	 	marginLeft:10,
