@@ -6,9 +6,7 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-
 import { vw } from 'react-native-expo-viewport-units';
-
 import { Button } from 'react-native-material-ui'
 
 export default class RegisterScreen extends Component {
@@ -18,12 +16,11 @@ export default class RegisterScreen extends Component {
     this.state = {email: '', pass: ''};
   }
 
-  // Move to HOME Screen
+  // Move to SetSaving Screen
   moveToSetSaving() {
     this.props.navigation.push('SetSaving')
   }
 
-  // TODO: Add contents on the REGISTER Screen.
   render() {
     return (
       <View style={styles.container}>
@@ -31,11 +28,13 @@ export default class RegisterScreen extends Component {
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
          />
+
         {/* Message area */}
         <View style={styles.register_message}>
           <Text style={styles.register_header}>Let's begin your journey</Text>
           <Text style={styles.register_header}>To save money</Text>
         </View>
+
         {/* Register Form area */}
         <View style={styles.register_form}>
           <Text style={styles.create_header}>Create Your Account</Text>
@@ -55,6 +54,8 @@ export default class RegisterScreen extends Component {
           />
           <View style = {styles.grayLine} />
         </View>
+
+        {/* Submit area */}
         <View style={styles.submit_area}>
           <Text style={styles.privacy_message}>By signing up</Text>
           <Text style={styles.privacy_message}>Check our &nbsp;
@@ -67,11 +68,10 @@ export default class RegisterScreen extends Component {
           onPress={() => this.moveToSetSaving()}/> 
         </View>
       </View>   
-      );
+    );
   }
 }
 
-// TODO: Add styles on the REGISTER Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
