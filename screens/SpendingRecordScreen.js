@@ -11,6 +11,8 @@ import { vw } from 'react-native-expo-viewport-units';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { vh } from 'react-native-expo-viewport-units';
 import { Button } from 'react-native-material-ui';
+import { AsyncStorage } from 'react-native';
+
 export default class SpendingRecordScreen extends Component {
 
     constructor(props) {
@@ -25,6 +27,26 @@ export default class SpendingRecordScreen extends Component {
   static navigationOptions = {
     header: null
   };
+
+  async addRecord() {
+    var records = await AsyncStorage.getItem('records')
+    if (!records) {
+      records = []
+    }
+    else {
+      records = JSON.parse(records)
+    }
+
+    const record = {
+      title: this.state.de,
+      amount: -parseInt(this.state.spa)
+    }
+
+    records.unshift(record)
+    await AsyncStorage.setItem('records', JSON.stringify(records))
+
+    this.props.navigation.push('Home')
+  }
 
   render() {
     return (
@@ -62,7 +84,7 @@ export default class SpendingRecordScreen extends Component {
           <View style = {styles.SubB}>
 						<Button color="red"
             	primary raised upperCase={false} text="Submit"
-          		onPress ={() => this.props.navigation.push('AddRecord')} 
+          		onPress ={() => this.addRecord()} 
       			/>
         	</View>
         </View>
