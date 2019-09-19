@@ -5,44 +5,35 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  Modal,
-  TouchableHighlight,
-  Picker,
   TouchableOpacity,
 } from 'react-native';
-
 import { vw,vh } from 'react-native-expo-viewport-units';
-
 import ReactNativePickerModule from 'react-native-picker-module';
-
 import { Button } from 'react-native-material-ui';
-
-
 
 export default class SetSavingScreen extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {sa: '',
-                  sp: '', 
-                  re: 0,
-                  month: '',
-                  selectedValue: null,
-                  data: [
-                    "3 Months",
-                    "6 Months",
-                    "12 Months",
-                    "18 Months",
-                    "24 Months",
-                    "30 Months",
-                    "36 Months"
-                  ],
-                  word: 'Select Saving Period',
-                  mon: [3,6,12,18,24,30,36],
+    this.state = {
+      sa: '',
+      sp: '', 
+      re: 0,
+      month: '',
+      selectedValue: null,
+      data: [
+        "3 Months",
+        "6 Months",
+        "12 Months",
+        "18 Months",
+        "24 Months",
+        "30 Months",
+        "36 Months"
+      ],
+      word: 'Select Saving Period',
+      mon: [3,6,12,18,24,30,36],
     };
   }
-
-  
 
   calculateSave = () => {
     const { sa, sp,re} = this.state;
@@ -84,15 +75,7 @@ export default class SetSavingScreen extends Component {
         });
       break;
     }
-
-
-
-
-    
   }
-
- 
-
 
   // Move to HOME Screen
   moveToHome() {
@@ -102,15 +85,19 @@ export default class SetSavingScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+
+        {/* Logo */}
         <Image
           style = {styles.i}
           source = {require('../assets/images/logo.png')}
          />
+
         {/* Message area */}
         <View style={styles.register_message}>
         <Text style={styles.register_header}>Let's begin your journey</Text>
           <Text style={styles.register_header}>To save money</Text>
         </View>
+
         {/* Set Form area */}
         <View style={styles.saving_form}>
           <Text style={styles.create_header}>Set your saving goal</Text>
@@ -126,8 +113,7 @@ export default class SetSavingScreen extends Component {
             <TouchableOpacity 
             onPress={() => {this.pickerRef.show()}}
             style={styles.register_input}>
-              <Text
-              style={styles.x}>{this.state.word}</Text>
+              <Text style={styles.x}>{this.state.word}</Text>
             </TouchableOpacity>
 
             <ReactNativePickerModule
@@ -135,11 +121,15 @@ export default class SetSavingScreen extends Component {
               value={this.state.selectedValue}
               title={"Select a saving period"}
               items={this.state.data}
-              onValueChange={(index) => {this.setState({word: index})
-                              this.calculateSave()}}
+              onValueChange={(index) => {
+                this.setState({word: index});
+                this.calculateSave();
+              }}
             />
           <View style = {styles.grayLine} />
         </View>
+
+        {/* Submit area */}
         <View style={styles.submit_area}>
           <Text style={styles.saving_message}
             onPress={() => this.calculateSave()}>Savings required in one month:</Text>
@@ -151,8 +141,7 @@ export default class SetSavingScreen extends Component {
           /> */}
           {/* Material UI Test */}
           <Button primary raised upperCase={false} text="Sign up"
-          
-          onPress={() => this.moveToHome()}
+            onPress={() => this.moveToHome()}
           /> 
         </View>
       </View>   
@@ -160,10 +149,6 @@ export default class SetSavingScreen extends Component {
   }
 }
 
-
-
-
-// TODO: Add styles on the REGISTER Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -252,6 +237,4 @@ const styles = StyleSheet.create({
   x: {
     marginTop: vh(1)
   }
-
-  
 })
