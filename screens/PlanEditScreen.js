@@ -3,13 +3,10 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   TextInput,
 } from 'react-native';
 import { vw, vh } from 'react-native-expo-viewport-units';
-import Header from '../components/Dashboard/Header';
 import { Button } from 'react-native-material-ui';
-import { placeholder } from '@babel/types';
 // import Divider from 'react-native-divider';
 
 
@@ -24,22 +21,22 @@ export default class PlanEdit extends Component {
 		this.state = { tsg: '$10k', cp: '10/09/2019', ht: 'Apartment', r:'Toowong' };
 	};
 
-
 	render(){
 		return (
 			<View style = {styles.nothing}>
-				<View style = {styles.Topic}>
 
+				{/* Header */}
+				<View style = {styles.Topic}>
 					<Text style = {styles.back}
 						onPress ={() => this.props.navigation.push('Plan')}>Cancel</Text>
 					<Text style = {styles.plan}>Plan</Text>
-
 				</View>
 
 				<View style = {styles.column}>
+
+					{/* Total Saving Goal */}
 					<Text style = {styles.attribute}>Total Saving Goal</Text>
 					{/* <Divider/> */}
-					
 					<View style = {styles.attribute}>
 						<TextInput
 							style={styles.input}
@@ -47,13 +44,10 @@ export default class PlanEdit extends Component {
 							value={this.state.tsg}
 						/>
 					</View>
-					
 
+					<View style={styles.line}></View>
 
-					<View style={styles.line}>
-            		</View>
-					
-
+					{/* Completion Period */}
 					<Text style = {styles.attribute}>Completion Period</Text>
 					
 					<View style = {styles.attribute}>
@@ -64,9 +58,9 @@ export default class PlanEdit extends Component {
 						/>
 					</View>
 
-					<View style={styles.line}>
-            		</View>
+					<View style={styles.line}></View>
 					
+					{/* House Types */}
 					<Text style = {styles.attribute}>House Type</Text>
 					
 					<View style = {styles.attribute}>
@@ -77,9 +71,9 @@ export default class PlanEdit extends Component {
 						/>
 					</View>
 
-					<View style={styles.line}>
-            		</View>
+					<View style={styles.line}></View>
 
+					{/* Region */}
 					<Text style = {styles.attribute}>Region</Text>
 
 					<View style = {styles.attribute}>
@@ -90,22 +84,17 @@ export default class PlanEdit extends Component {
 						/>
 					</View>
 
-					<View style={styles.line}>
-            		</View>
+					<View style={styles.line}></View>
 
-					
-				
 				</View>
 				
 				<View style = {styles.save}>
 					<Button primary raised upperCase={false} color="#36AC4A" text="Save"
-					onPress ={() => this.props.navigation.push('Plan')} 
-        			/>
-        		</View>
+						onPress ={() => this.props.navigation.push('Plan')} 
+        	/>
+        </View>
 				
-        	</View>
-			
-
+      </View>
 		)
 	}
 }
@@ -207,8 +196,4 @@ const styles = StyleSheet.create({
 		marginTop: vh(-1),
 		marginBottom: vh(5),
 	},
-
-
-
-
 })
