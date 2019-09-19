@@ -6,89 +6,70 @@ import {
   Image,
   TextInput
 } from 'react-native';
-// import { vw } from 'react-native-expo-viewport-units';
 
 import { Button } from 'react-native-material-ui';
 import { vw, vh } from 'react-native-expo-viewport-units';
 
 export default class LoginScreen extends Component {
 
-
-  // Move to LOGIN Screen
-  moveToRegister() {
-    this.props.navigation.push('Register')
-  }
-
-  
-
-  // TODO: Add contents on the LOGIN Screen.
   render() {
     return (
       <View style={styles.container}>
-          <Image
+        <Image
           style = {styles.i}
           source = {require('../assets/images/logo_large.png')}
-          />
-          <View style={styles.loginContainer}>
-            <TextInput
+        />
+
+        <View style={styles.loginContainer}>
+          <TextInput
             style={styles.register_input}
             placeholder="UserName: "
-            />
+          />
+        </View>
 
-          </View>
-          <View style={styles.loginContainer}>
-            <TextInput
+        <View style={styles.loginContainer}>
+          <TextInput
             style={styles.register_input}
             placeholder="Password: "
-            />
-            <Text style = {styles.forgot}>Forgot Password?</Text>
-          </View>
-          
+          />
+          <Text style = {styles.forgot}>Forgot Password?</Text>
+        </View>
 
         <View style={styles.login}>
           <Button primary raised={true} upperCase={false} text="Log in"
             color = 'green'
             onPress ={() => this.props.navigation.push('Home')} 
-        />
+          />
         </View>
-        
-        
 
-          <View style={styles.create}>
-            <Button primary raised={true} upperCase={false} text="Sign up"
-              onPress ={() => this.props.navigation.push('Register')} 
-            />
-          </View>  
+        <View style={styles.create}>
+          <Button primary raised={true} upperCase={false} text="Sign up"
+            onPress ={() => this.props.navigation.push('Register')} 
+          />
+        </View>  
 
-          <View style={styles.google}>
-          <Image
+        <View style={styles.google}>
+        <Image
           style = {styles.photo}
           source = {require('../assets/images/google.jpg')}
-          />
-          {/* <Text style = {styles.google_text}>Google</Text> */}
+        />
+        {/* <Text style = {styles.google_text}>Google</Text> */}
         </View>
 
         <View style={styles.facebook}>
           <Image
-          style = {styles.photo}
-          source = {require('../assets/images/facebook.png')}
+            style = {styles.photo}
+            source = {require('../assets/images/facebook.png')}
           />
           {/* <Text style = {styles.facebook_text}>Facebook</Text> */}
           <Text style = {styles.q_text}>Doesn't have an account?</Text>          
           {/*<Text style = {styles.c_text}>Create now!</Text> */}
-          </View>
         </View>
-
-
-
-
-      
-
+      </View>
     )
   }
 }
 
-// TODO: Add styles on the LOGIN Screen
 const styles = StyleSheet.create({
  
   container: {
