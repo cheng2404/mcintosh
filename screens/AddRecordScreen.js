@@ -6,8 +6,7 @@ import {
   Image,
 } from 'react-native';
 
-import Header from '../components/Dashboard/Header'
-import { vw, vmax } from 'react-native-expo-viewport-units';
+import { vw } from 'react-native-expo-viewport-units';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class AddRecordScreen extends Component {
@@ -17,72 +16,56 @@ export default class AddRecordScreen extends Component {
     header: null
   };
 
-  // TODO: Add contents on the HOME Screen.
   render() {
     return (
       <View style={styles.container}>
 
         {/* Heaer Component */}
-
-
         <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
-            <Image
-              style = {styles.Imageback}
-              source = {require('../assets/images/back.png')}
-            />
-          
-          </TouchableOpacity>
-
-
-       
-        
-
+          <Image
+            style = {styles.Imageback}
+            source = {require('../assets/images/back.png')}
+          />  
+        </TouchableOpacity>
 
         <Text style={styles.TitleWords}>Add Your Record </Text>
 
         <View style={styles.Box}>
+
+          {/* Saving */}
           <TouchableOpacity style = {styles.SavingB} onPress={() => this.props.navigation.push('SavingRecord')}>
             <Text style={styles. SSTitle}>Saving</Text>
             <Image
               style = {styles.ImageSaving}
               source = {require('../assets/images/saving.png')}
             />
-          
           </TouchableOpacity>
 
+          {/* Spending */}
           <TouchableOpacity style = {styles.SpendingB} onPress={() => this.props.navigation.push('SpendingRecord')}>
             <Text style={styles. SSTitle}>Spending</Text>
             <Image
               style = {styles.ImageSpending}
               source = {require('../assets/images/spending1.png')}
             />
-
           </TouchableOpacity>
 
-
-{/*
+        {/*
           <TouchableOpacity onPress={() => this.props.navigation.push('Home')} style = {styles.Boxclose} >
             <Image
               style = {styles.Iamgeclose}
               source = {require('../assets/images/closing.png')}
             />
-          
           </TouchableOpacity>
-*/}
+        */}
 
         </View>
-
-        
-
-        
-       
       </View>
     )
   }
 }
 
-
-// TODO: Add styles on the HOME Screen
+// TODO: Add styles on the AddRecordScreen Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -197,8 +180,5 @@ const styles = StyleSheet.create({
     width:50,
     resizeMode: 'contain',
     height :50,
-  },
-
-
-  
+  },  
 })
