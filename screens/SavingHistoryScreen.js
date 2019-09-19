@@ -34,6 +34,7 @@ export default class SavingHistoryScreen extends Component {
     if (this.state.mode == 'all') {
       return (
         <View style={styles.container}>
+
           {/* Header */}
           <View style={styles.header}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
@@ -86,14 +87,13 @@ export default class SavingHistoryScreen extends Component {
           <View style={styles.main}>
             <Logs />
           </View>
-      </View> 
+        </View> 
       )
     }
   }
 }
 
 
-// TODO: Add styles on the HOME Screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
